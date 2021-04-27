@@ -1,10 +1,10 @@
 STIL 1.0 { Design 2005; }
 Header {
    Title "  TetraMAX(R)  O-2018.06-SP5-1-i20190308_134335 STIL output";
-   Date "Tue Apr 27 15:51:35 2021";
+   Date "Tue Apr 27 16:57:46 2021";
    Source "Minimal STIL for design `divider_dshift'";
    History {
-      Ann {*  Incoming_Date "Tue Apr 27 15:50:39 2021"  *}
+      Ann {*  Incoming_Date "Tue Apr 27 16:56:53 2021"  *}
       Ann {*  Incoming_Src "DFT Compiler F-2011.09"  *}
       Ann {*    Collapsed Transition Fault Summary Report *}
       Ann {* ----------------------------------------------- *}
