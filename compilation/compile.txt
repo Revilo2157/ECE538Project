@@ -29,7 +29,7 @@ NangateOpenCellLibrary.db
 set link_library   "* NangateOpenCellLibrary.db"
 * NangateOpenCellLibrary.db
 set timestamp [clock format [clock scan now] -format "%Y-%m-%d_%H-%M"]
-2021-04-27_06-05
+2021-04-27_15-50
 set enable_page_mode false
 false
 set sh_new_variable_message false
@@ -41,7 +41,7 @@ true
 set hdlin_auto_save_templates true
 true
 set sourceDir $::env(source)
-/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift
+/winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift
 set top_module $::env(top)
 divider_dshift
 set clk_pin $::env(clk)
@@ -50,34 +50,34 @@ i_clk
 foreach {file} [ls ${sourceDir}/*.v] { 
     read_file -format verilog ${file}
 }
-Loading db file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db'
+Loading db file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db'
 Loading db file '/home/software/synopsys/synthesis/F-2011.09/libraries/syn/gtech.db'
 Loading db file '/home/software/synopsys/synthesis/F-2011.09/libraries/syn/standard.sldb'
   Loading link library 'NangateOpenCellLibrary'
   Loading link library 'gtech'
-Loading verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/CLA_fixed.v'
+Loading verilog file '/winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/CLA_fixed.v'
 Detecting input file type automatically (-rtl or -netlist).
 Running DC verilog reader
 Reading with Presto HDL Compiler (equivalent to -rtl option).
 Running PRESTO HDLC
-Compiling source file /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/CLA_fixed.v
+Compiling source file /winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/CLA_fixed.v
 Presto compilation completed successfully.
-Current design is now '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/operator_A.db:operator_A'
+Current design is now '/winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/operator_A.db:operator_A'
 Loaded 4 designs.
 Current design is 'operator_A'.
-Loading verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v'
+Loading verilog file '/winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v'
 Detecting input file type automatically (-rtl or -netlist).
 Running DC verilog reader
 Reading with Presto HDL Compiler (equivalent to -rtl option).
 Running PRESTO HDLC
-Compiling source file /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v
-Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:94: signed to unsigned conversion occurs. (VER-318)
-Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:98: signed to unsigned assignment occurs. (VER-318)
-Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:175: unsigned to signed assignment occurs. (VER-318)
-Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:230: unsigned to signed assignment occurs. (VER-318)
+Compiling source file /winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v
+Warning:  /winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:94: signed to unsigned conversion occurs. (VER-318)
+Warning:  /winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:98: signed to unsigned assignment occurs. (VER-318)
+Warning:  /winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:175: unsigned to signed assignment occurs. (VER-318)
+Warning:  /winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:230: unsigned to signed assignment occurs. (VER-318)
 
 Statistics for case statements in always block at line 134 in file
-	'/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v'
+	'/winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -87,7 +87,7 @@ Statistics for case statements in always block at line 134 in file
 
 Inferred memory devices in process
 	in routine divider_dshift line 134 in file
-		'/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v'.
+		'/winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
@@ -115,18 +115,18 @@ Inferred memory devices in process
 |       PR_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
 ===============================================================================
 Presto compilation completed successfully.
-Current design is now '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.db:divider_dshift'
+Current design is now '/winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.db:divider_dshift'
 Loaded 1 design.
 Current design is 'divider_dshift'.
-Loading verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/shifter.v'
+Loading verilog file '/winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/shifter.v'
 Detecting input file type automatically (-rtl or -netlist).
 Running DC verilog reader
 Reading with Presto HDL Compiler (equivalent to -rtl option).
 Running PRESTO HDLC
-Compiling source file /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/shifter.v
-Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/shifter.v:278: signed to unsigned assignment occurs. (VER-318)
+Compiling source file /winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/shifter.v
+Warning:  /winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/shifter.v:278: signed to unsigned assignment occurs. (VER-318)
 Presto compilation completed successfully.
-Current design is now '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/shift_1b.db:shift_1b'
+Current design is now '/winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/shift_1b.db:shift_1b'
 Loaded 5 designs.
 Current design is 'shift_1b'.
 current_design ${top_module}
@@ -137,8 +137,8 @@ link
   Linking design 'divider_dshift'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  * (10 designs)              /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.db, etc
-  NangateOpenCellLibrary (library) /winhomes/oar5/Hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db
+  * (10 designs)              /winhomes/oar5/hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.db, etc
+  NangateOpenCellLibrary (library) /winhomes/oar5/hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db
 
 1
 compile
@@ -163,34 +163,10 @@ Information: There are 63 potential problems in your design. Please run 'check_d
   Processing 'operator_A_0'
   Processing 'adder_32bit_0'
   Processing 'shift_1b_0'
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_MUX/str/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_MUX/str/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/2/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/2/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/3/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/3/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/4/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/4/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/5/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/5/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_NOT/str/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_NOT/str/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
   Processing 'shift_3b_0'
   Processing 'shift_7b'
   Processing 'shifter'
   Processing 'divider_dshift'
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_inc/rpl/31/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_NAND2/str/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_NAND2/str/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_inc/rpl/31/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW_rash/mx2/32/6/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW_rash/mx2/32/6/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_add/rpl/31/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_add/rpl/31/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_add/cla/31/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_add/cla/31/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_incdec/rpl/31/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
-Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_incdec/rpl/31/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
 
   Updating timing information
 Information: Updating design information... (UID-85)
@@ -685,23 +661,23 @@ Information: The register 'shifted_reg[4]' is a constant and will be removed. (O
    ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
     TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:06    4682.7      0.00       0.0    1342.9                          
-    0:00:06    4682.7      0.00       0.0    1342.9                          
-    0:00:06    4682.7      0.00       0.0    1342.9                          
-    0:00:06    4682.7      0.00       0.0    1342.9                          
-    0:00:07    4682.7      0.00       0.0    1342.9                          
-    0:00:07    4662.7      0.00       0.0    1342.9                          
-    0:00:07    4662.7      0.00       0.0    1342.9                          
-    0:00:07    4662.7      0.00       0.0    1342.9                          
-    0:00:07    4662.7      0.00       0.0    1342.9                          
-    0:00:07    4662.7      0.00       0.0    1342.9                          
-    0:00:07    4673.1      0.00       0.0     885.2                          
-    0:00:07    4676.8      0.00       0.0     710.1                          
-    0:00:07    4689.3      0.00       0.0     646.3                          
-    0:00:07    4689.8      0.00       0.0     639.4                          
-    0:00:07    4689.8      0.00       0.0     639.4                          
-    0:00:07    4689.8      0.00       0.0     639.4                          
-    0:00:07    4689.8      0.00       0.0     639.4                          
+    0:00:04    4682.7      0.00       0.0    1342.9                          
+    0:00:04    4682.7      0.00       0.0    1342.9                          
+    0:00:04    4682.7      0.00       0.0    1342.9                          
+    0:00:04    4682.7      0.00       0.0    1342.9                          
+    0:00:05    4682.7      0.00       0.0    1342.9                          
+    0:00:05    4662.7      0.00       0.0    1342.9                          
+    0:00:05    4662.7      0.00       0.0    1342.9                          
+    0:00:05    4662.7      0.00       0.0    1342.9                          
+    0:00:05    4662.7      0.00       0.0    1342.9                          
+    0:00:05    4662.7      0.00       0.0    1342.9                          
+    0:00:05    4673.1      0.00       0.0     885.2                          
+    0:00:05    4676.8      0.00       0.0     710.1                          
+    0:00:05    4689.3      0.00       0.0     646.3                          
+    0:00:05    4689.8      0.00       0.0     639.4                          
+    0:00:05    4689.8      0.00       0.0     639.4                          
+    0:00:05    4689.8      0.00       0.0     639.4                          
+    0:00:05    4689.8      0.00       0.0     639.4                          
 
 
 
@@ -711,9 +687,9 @@ Information: The register 'shifted_reg[4]' is a constant and will be removed. (O
    ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
     TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:07    4689.8      0.00       0.0     639.4                          
-    0:00:07    4689.8      0.00       0.0     639.4                          
-    0:00:07    4689.8      0.00       0.0     639.4                          
+    0:00:05    4689.8      0.00       0.0     639.4                          
+    0:00:05    4689.8      0.00       0.0     639.4                          
+    0:00:05    4689.8      0.00       0.0     639.4                          
 
 
   Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
@@ -722,8 +698,8 @@ Information: The register 'shifted_reg[4]' is a constant and will be removed. (O
    ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
     TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:07    4689.8      0.00       0.0     639.4                          
-    0:00:07    4705.5      0.00       0.0       0.0                          
+    0:00:05    4689.8      0.00       0.0     639.4                          
+    0:00:05    4705.5      0.00       0.0       0.0                          
 
 
   Beginning Area-Recovery Phase  (cleanup)
@@ -732,22 +708,22 @@ Information: The register 'shifted_reg[4]' is a constant and will be removed. (O
    ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
     TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
   --------- --------- --------- --------- --------- -------------------------
-    0:00:07    4705.5      0.00       0.0       0.0                          
-    0:00:07    4705.5      0.00       0.0       0.0                          
-    0:00:07    4658.2      0.00       0.0       0.0                          
-    0:00:07    4656.1      0.00       0.0       0.0                          
-    0:00:07    4654.5      0.00       0.0       0.0                          
-    0:00:07    4654.5      0.00       0.0       0.0                          
-    0:00:07    4654.5      0.00       0.0       0.0                          
-    0:00:07    4654.5      0.00       0.0       0.0                          
-    0:00:07    4654.5      0.00       0.0       0.0                          
-    0:00:07    4643.0      0.00       0.0       0.0                          
-    0:00:07    4643.0      0.00       0.0       0.0                          
-    0:00:07    4643.0      0.00       0.0       0.0                          
-    0:00:07    4643.0      0.00       0.0       0.0                          
-    0:00:07    4643.0      0.00       0.0       0.0                          
-    0:00:07    4643.0      0.00       0.0       0.0                          
-Loading db file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db'
+    0:00:05    4705.5      0.00       0.0       0.0                          
+    0:00:05    4705.5      0.00       0.0       0.0                          
+    0:00:05    4658.2      0.00       0.0       0.0                          
+    0:00:05    4656.1      0.00       0.0       0.0                          
+    0:00:05    4654.5      0.00       0.0       0.0                          
+    0:00:05    4654.5      0.00       0.0       0.0                          
+    0:00:05    4654.5      0.00       0.0       0.0                          
+    0:00:05    4654.5      0.00       0.0       0.0                          
+    0:00:05    4654.5      0.00       0.0       0.0                          
+    0:00:05    4643.0      0.00       0.0       0.0                          
+    0:00:05    4643.0      0.00       0.0       0.0                          
+    0:00:05    4643.0      0.00       0.0       0.0                          
+    0:00:05    4643.0      0.00       0.0       0.0                          
+    0:00:05    4643.0      0.00       0.0       0.0                          
+    0:00:05    4643.0      0.00       0.0       0.0                          
+Loading db file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db'
 
   Optimization Complete
   ---------------------
@@ -784,7 +760,7 @@ check_design
 ****************************************
 check_design summary:
 Version:     F-2011.09
-Date:        Tue Apr 27 06:05:23 2021
+Date:        Tue Apr 27 15:50:25 2021
 ****************************************
 
                    Name                                            Total
@@ -924,7 +900,7 @@ Information: The register 'shifted_1_reg[4]' is a constant and will be removed. 
    ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
     TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
   --------- --------- --------- --------- --------- ------------------------- ---------
-    0:00:03    6499.2      0.24      11.8       0.0                                0.00
+    0:00:02    6499.2      0.24      11.8       0.0                                0.00
     0:00:03    6498.4      0.24      11.3       0.0                                0.00
     0:00:03    6498.4      0.24      11.3       0.0                                0.00
     0:00:03    6497.3      0.24      11.3       0.0                                0.00
@@ -1003,7 +979,7 @@ Information: The register 'shifted_1_reg[4]' is a constant and will be removed. 
     0:00:09    4690.4      0.00       0.0       0.0                                0.00
     0:00:09    4690.4      0.00       0.0       0.0                                0.00
     0:00:09    4690.9      0.00       0.0       0.0                                0.00
-Loading db file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db'
+Loading db file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db'
 
   Optimization Complete
   ---------------------
@@ -1018,7 +994,7 @@ ungroup -all -flatten
 Information: Updating design information... (UID-85)
 1
 write  -h -format verilog -output "${top_module}_gatelevel.v"
-Writing verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/divider_dshift_gatelevel.v'.
+Writing verilog file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/divider_dshift_gatelevel.v'.
 1
 exit
 

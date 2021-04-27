@@ -1,4 +1,4 @@
-Loading db file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/nangate_scan.db'
+Loading db file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/nangate_scan.db'
 Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
 Warning: Design has unannotated primary inputs. (PWR-414)
 Warning: Design has unannotated sequential cell outputs. (PWR-415)
@@ -8,13 +8,13 @@ Report : power
         -analysis_effort low
 Design : divider_dshift
 Version: F-2011.09
-Date   : Tue Apr 27 06:05:45 2021
+Date   : Tue Apr 27 15:50:47 2021
 ****************************************
 
 
 Library(s) Used:
 
-    nangate_scan (File: /winhomes/oar5/Hw4/ECE538Hw4-main/compilation/nangate_scan.db)
+    nangate_scan (File: /winhomes/oar5/hw4/ECE538Hw4-main/compilation/nangate_scan.db)
 
 
 Operating Conditions: typical   Library: nangate_scan

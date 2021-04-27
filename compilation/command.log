@@ -1,6 +1,6 @@
 #@ # 
 #@ # Running dc_shell Version F-2011.09 for linux -- Aug 22, 2011
-#@ # Date:   Tue Apr 27 06:05:34 2021
+#@ # Date:   Tue Apr 27 15:50:36 2021
 #@ # Run by: oar5@vlsi05.egr.duke.edu
 #@ 
 
@@ -4716,7 +4716,7 @@ source /home/software/synopsys/synthesis/F-2011.09/admin/setup/.synopsys_dc.setu
 #@ 
 #@ # -- End source /home/software/synopsys/synthesis/F-2011.09/admin/setup/.synopsys_dc.setup
 
-source -echo -verbose /winhomes/oar5/Hw4/ECE538Hw4-main/compilation/../tcl/scan_insertion_DC.tcl
+source -echo -verbose /winhomes/oar5/hw4/ECE538Hw4-main/compilation/../tcl/scan_insertion_DC.tcl
 #@ # To Be Run From the Compilation Directory
 #@ set top_module $::env(top)
 #@ read_verilog ${top_module}_gatelevel.v

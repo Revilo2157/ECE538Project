@@ -11,8 +11,8 @@
 
 set library_name NangateOpenCellLibrary
 NangateOpenCellLibrary
-set link_library [list * ../nangate_scan.db]
-* ../nangate_scan.db
+set link_library [list * nangate_scan.db]
+* nangate_scan.db
 set top_module $::env(top)
 divider_dshift
 read_verilog ./gate/${top_module}/${top_module}_scan.v
@@ -20,154 +20,16 @@ read_verilog ./gate/${top_module}/${top_module}_scan.v
 #ungroup -flatten -all
 # Define top level in the hierarchy
 current_design $top_module
-Loading verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/gate/divider_dshift/divider_dshift_scan.v'
-Error: Cannot read link_path file '../nangate_scan.db'. (LNK-001)
+Loading verilog file '/winhomes/oar5/hw4/ECE538Hw4-main/gate/divider_dshift/divider_dshift_scan.v'
+Loading db file '/winhomes/oar5/hw4/ECE538Hw4-main/nangate_scan.db'
 {"divider_dshift"}
 link_design 
 Linking design divider_dshift...
-
-
-Information: Main library is not specified. Please specify main library.
- (LNK-049)
-Warning: Unable to resolve reference to 'INV_X4' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'SDFFR_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AOI22_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AOI21_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AND2_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AOI222_X1' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'NAND4_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'XOR2_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OAI22_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'NOR3_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'NOR2_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OAI21_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'NAND2_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'XNOR2_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'NAND3_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OAI222_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OR2_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OAI221_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AOI221_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'NOR4_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AND3_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OAI33_X1' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AND4_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AND2_X4' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OR3_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AND4_X4' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'AOI211_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OR2_X4' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OR4_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'BUF_X4' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'INV_X1' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'NAND2_X1' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'OAI211_X2' in 'divider_dshift'. (LNK-005)
-Warning: Unable to resolve reference to 'SDFFS_X1' in 'divider_dshift'. (LNK-005)
-Information: Creating black box for nq_reg_21_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_5_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U2408/AOI222_X1... (LNK-043)
-Information: Creating black box for reg_a_reg_24_/SDFFR_X2... (LNK-043)
-Information: Creating black box for q_reg_6_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_1_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_quotient_reg_6_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_14_/SDFFR_X2... (LNK-043)
-Information: Creating black box for DR_reg_31_/SDFFR_X2... (LNK-043)
-Information: Creating black box for ct_reg_4_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_remainder_reg_12_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_22_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_6_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_a_reg_25_/SDFFR_X2... (LNK-043)
-Information: Creating black box for q_reg_7_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U736/OAI222_X2... (LNK-043)
-Information: Creating black box for U738/OAI222_X2... (LNK-043)
-Information: Creating black box for U739/OAI222_X2... (LNK-043)
-Information: Creating black box for nq_reg_2_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_quotient_reg_7_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_15_/SDFFR_X2... (LNK-043)
-Information: Creating black box for ct_reg_5_/SDFFR_X2... (LNK-043)
-Information: Creating black box for q_reg_30_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_remainder_reg_13_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_23_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_7_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U740/OAI222_X2... (LNK-043)
-Information: Creating black box for reg_a_reg_26_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U744/OAI222_X2... (LNK-043)
-Information: Creating black box for q_reg_8_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U745/OAI222_X2... (LNK-043)
-Information: Creating black box for U746/OAI222_X2... (LNK-043)
-Information: Creating black box for U749/OAI222_X2... (LNK-043)
-Information: Creating black box for nq_reg_3_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_quotient_reg_8_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_16_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_remainder_reg_14_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_24_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_8_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U2439/AOI222_X1... (LNK-043)
-Information: Creating black box for reg_a_reg_27_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U754/OAI222_X2... (LNK-043)
-Information: Creating black box for q_reg_9_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U758/OAI222_X2... (LNK-043)
-Information: Creating black box for nq_reg_4_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_quotient_reg_9_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_17_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_remainder_reg_15_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_25_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U2444/AOI222_X1... (LNK-043)
-Information: Creating black box for reg_b_reg_9_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U2447/AOI222_X1... (LNK-043)
-Information: Creating black box for reg_a_reg_28_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_5_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_18_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_remainder_reg_16_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U2450/AOI222_X1... (LNK-043)
-Information: Creating black box for nq_reg_26_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U2454/AOI222_X1... (LNK-043)
-Information: Creating black box for reg_a_reg_29_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_6_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_b_reg_19_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_remainder_reg_17_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_27_/SDFFR_X2... (LNK-043)
-Information: Creating black box for PR_1_reg_20_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_7_/SDFFR_X2... (LNK-043)
-Information: Creating black box for sdata_reg_0_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_remainder_reg_18_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_28_/SDFFR_X2... (LNK-043)
-Information: Creating black box for PR_1_reg_21_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_8_/SDFFR_X2... (LNK-043)
-Information: Creating black box for sdata_reg_1_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_remainder_reg_19_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_29_/SDFFR_X2... (LNK-043)
-Information: Creating black box for PR_1_reg_22_/SDFFR_X2... (LNK-043)
-Information: Creating black box for nq_reg_9_/SDFFR_X2... (LNK-043)
-Information: Creating black box for sdata_reg_2_/SDFFR_X2... (LNK-043)
-Information: Creating black box for PR_1_reg_23_/SDFFR_X2... (LNK-043)
-Information: Creating black box for reg_carry_reg/SDFFR_X2... (LNK-043)
-Information: Creating black box for sdata_reg_3_/SDFFR_X2... (LNK-043)
-Information: Creating black box for PR_1_reg_24_/SDFFR_X2... (LNK-043)
-Information: Creating black box for sdata_reg_4_/SDFFR_X2... (LNK-043)
-Information: Creating black box for PR_1_reg_25_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U2705/AOI222_X1... (LNK-043)
-Information: Creating black box for U2706/AOI222_X1... (LNK-043)
-Information: Creating black box for U2707/AOI222_X1... (LNK-043)
-Information: Creating black box for U2709/AOI222_X1... (LNK-043)
-Information: Creating black box for sdata_reg_5_/SDFFR_X2... (LNK-043)
-Information: Creating black box for PR_1_reg_26_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U2710/AOI222_X1... (LNK-043)
-Information: Creating black box for U2719/AOI222_X1... (LNK-043)
-Information: Creating black box for sdata_reg_6_/SDFFR_X2... (LNK-043)
-Information: Creating black box for PR_1_reg_27_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U1939/OAI33_X1... (LNK-043)
-Information: Creating black box for sdata_reg_7_/SDFFR_X2... (LNK-043)
-Information: Creating black box for o_quotient_reg_30_/SDFFR_X2... (LNK-043)
-Information: Creating black box for PR_1_reg_28_/SDFFR_X2... (LNK-043)
-Information: Creating black box for U2733/AOI222_X1... (LNK-043)
-Information: Creating black box for U2737/AOI222_X1... (LNK-043)
-Information: Creating black box for sdata_reg_8_/SDFFR_X2... (LNK-043)
-Note - message 'LNK-043' default limit (100) exceeded.  Remainder will be suppressed.
-Error: Library ports does not have a complete set of trip-point thresholds. (DBR-207)
-Information: Design 'divider_dshift' was not successfully linked:
-	 0 unresolved references. (LNK-003)
-0
+Information: 100 (74.63%) library cells are unused in library nangate_scan..... (LNK-045)
+Information: total 100 library cells are unused (LNK-046)
+Design 'divider_dshift' was successfully linked.
+Information: There are 2296 leaf cells, ports, hiers and 2588 nets in the design (LNK-047)
+1
 # SET CONSTRAINTS
 set_max_area 0
 1
@@ -202,10 +64,55 @@ Report : timing
 	-sort_by slack
 Design : divider_dshift
 Version: K-2015.06-SP3-2
-Date   : Tue Apr 27 06:05:47 2021
+Date   : Tue Apr 27 15:50:50 2021
 ****************************************
 
-No constrained paths.
+
+  Startpoint: q_reg_1_ (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: reg_b_reg_30_
+               (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Point                                    Incr       Path
+  ---------------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.01       0.01
+  q_reg_1_/CK (SDFFR_X2)                   0.00       0.01 r
+  q_reg_1_/Q (SDFFR_X2)                    0.18       0.19 r
+  U2542/ZN (NAND3_X2)                      0.04       0.24 f
+  U295/ZN (OR3_X2)                         0.11       0.34 f
+  U294/ZN (OR3_X2)                         0.11       0.45 f
+  U293/ZN (OR3_X2)                         0.11       0.56 f
+  U292/ZN (OR3_X2)                         0.11       0.66 f
+  U291/ZN (OR3_X2)                         0.11       0.77 f
+  U290/ZN (OR3_X2)                         0.11       0.88 f
+  U289/ZN (OR3_X2)                         0.11       0.98 f
+  U288/ZN (OR3_X2)                         0.11       1.09 f
+  U287/ZN (OR3_X2)                         0.11       1.20 f
+  U286/ZN (OR3_X2)                         0.11       1.30 f
+  U285/ZN (OR3_X2)                         0.11       1.41 f
+  U284/ZN (OR3_X2)                         0.11       1.52 f
+  U283/ZN (OR3_X2)                         0.10       1.62 f
+  U2311/ZN (AOI21_X2)                      0.06       1.68 r
+  U2540/ZN (OAI21_X2)                      0.03       1.71 f
+  U151/ZN (AOI221_X2)                      0.07       1.79 r
+  U150/ZN (OAI221_X2)                      0.05       1.83 f
+  reg_b_reg_30_/D (SDFFR_X2)               0.00       1.83 f
+  data arrival time                                   1.83
+
+  clock i_clk (rise edge)                  1.00       1.00
+  clock network delay (ideal)              0.01       1.01
+  clock reconvergence pessimism            0.00       1.01
+  reg_b_reg_30_/CK (SDFFR_X2)                         1.01 r
+  library setup time                      -0.10       0.91
+  data required time                                  0.91
+  ---------------------------------------------------------------
+  data required time                                  0.91
+  data arrival time                                  -1.83
+  ---------------------------------------------------------------
+  slack (VIOLATED)                                   -0.92
+
 
 1
 set timing_save_pin_arrival_and_slack TRUE
@@ -218,17 +125,12 @@ Information: Defining new variable 'CLK'. (CMD-041)
 Information: Defining new variable 'library_name'. (CMD-041)
 Information: Defining new variable 'CLK_PERIOD'. (CMD-041)
 Information: Defining new variable 'top_module'. (CMD-041)
-Suppressed Messages Summary:
-Id          Severity      Occurrences   Suppressed
--------------------------------------------------------------------------------
-LNK-043     Information          2157         2057
-Total 1 type of message is suppressed
 
 Timing updates: 2 (1 implicit, 1 explicit) (1 incremental, 1 full, 0 logical)
 Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
-Maximum memory usage for this session: 475.20 MB
-CPU usage for this session: 1 seconds 
+Maximum memory usage for this session: 578.66 MB
+CPU usage for this session: 2 seconds 
 Elapsed time for this session: 2 seconds
-Diagnostics summary: 2 errors, 34 warnings, 106 informationals
+Diagnostics summary: 7 informationals
 
 Thank you for using pt_shell!

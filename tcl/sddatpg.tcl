@@ -34,7 +34,7 @@ puts $::env(TMGN)
 
 set max_patterns $::env(patterns)
 set time_per_run $::env(time)
-set_atpg -patterns $max_patterns -time {10, $time_per_run}
+set_atpg -patterns $max_patterns -time "{10, ${time_per_run}}"
 
 run_atpg basic_scan_only -ndetects 1
 # report_faults -slack effectiveness  

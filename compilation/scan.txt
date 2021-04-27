@@ -31,14 +31,14 @@ read_verilog ${top_module}_gatelevel.v
 Loading db file '/home/software/synopsys/synthesis/F-2011.09/libraries/syn/gtech.db'
 Loading db file '/home/software/synopsys/synthesis/F-2011.09/libraries/syn/standard.sldb'
   Loading link library 'gtech'
-Loading verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/divider_dshift_gatelevel.v'
+Loading verilog file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/divider_dshift_gatelevel.v'
 Detecting input file type automatically (-rtl or -netlist).
 Running DC verilog reader
 Performing 'read' command.
-Compiling source file /winhomes/oar5/Hw4/ECE538Hw4-main/compilation/divider_dshift_gatelevel.v
+Compiling source file /winhomes/oar5/hw4/ECE538Hw4-main/compilation/divider_dshift_gatelevel.v
 Reading with netlist reader (equivalent to -netlist option).
 Verilog netlist reader completed successfully.
-Current design is now '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/divider_dshift.db:divider_dshift'
+Current design is now '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/divider_dshift.db:divider_dshift'
 Loaded 1 design.
 Current design is 'divider_dshift'.
 divider_dshift
@@ -48,13 +48,13 @@ current_design ${top_module}
 Current design is 'divider_dshift'.
 {divider_dshift}
 link
-Loading db file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/nangate_scan.db'
+Loading db file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/nangate_scan.db'
 
   Linking design 'divider_dshift'
   Using the following designs and libraries:
   --------------------------------------------------------------------------
-  divider_dshift              /winhomes/oar5/Hw4/ECE538Hw4-main/compilation/divider_dshift.db
-  nangate_scan (library)      /winhomes/oar5/Hw4/ECE538Hw4-main/compilation/nangate_scan.db
+  divider_dshift              /winhomes/oar5/hw4/ECE538Hw4-main/compilation/divider_dshift.db
+  nangate_scan (library)      /winhomes/oar5/hw4/ECE538Hw4-main/compilation/nangate_scan.db
 
 1
 set_scan_configuration -style multiplexed_flip_flop
@@ -130,17 +130,17 @@ Information: Updating design information... (UID-85)
     0:00:04    5936.3      0.00       0.0       0.0                          
     0:00:04    5916.6      0.00       0.0       0.0                          
     0:00:04    5901.3      0.00       0.0       0.0                          
-    0:00:04    5893.7      0.00       0.0       0.0                          
-    0:00:04    5891.4      0.00       0.0       0.0                          
-    0:00:04    5890.7      0.00       0.0       0.0                          
-    0:00:04    5890.7      0.00       0.0       0.0                          
-    0:00:04    5890.7      0.00       0.0       0.0                          
-    0:00:04    5890.7      0.00       0.0       0.0                          
-    0:00:04    5890.7      0.00       0.0       0.0                          
-    0:00:04    5890.7      0.00       0.0       0.0                          
-    0:00:04    5890.7      0.00       0.0       0.0                          
-    0:00:04    5890.7      0.00       0.0       0.0                          
-    0:00:04    5890.7      0.00       0.0       0.0                          
+    0:00:05    5893.7      0.00       0.0       0.0                          
+    0:00:05    5891.4      0.00       0.0       0.0                          
+    0:00:05    5890.7      0.00       0.0       0.0                          
+    0:00:05    5890.7      0.00       0.0       0.0                          
+    0:00:05    5890.7      0.00       0.0       0.0                          
+    0:00:05    5890.7      0.00       0.0       0.0                          
+    0:00:05    5890.7      0.00       0.0       0.0                          
+    0:00:05    5890.7      0.00       0.0       0.0                          
+    0:00:05    5890.7      0.00       0.0       0.0                          
+    0:00:05    5890.7      0.00       0.0       0.0                          
+    0:00:05    5890.7      0.00       0.0       0.0                          
 
   Optimization Complete
   ---------------------
@@ -202,7 +202,7 @@ Preview_dft report
 For    : 'Insert_dft' command
 Design : divider_dshift
 Version: F-2011.09
-Date   : Tue Apr 27 06:05:44 2021
+Date   : Tue Apr 27 15:50:45 2021
 ****************************************
 
 Number of chains: 3
@@ -253,10 +253,10 @@ report_area > ${top_module}.area_rpt
 report_timing > ${top_module}.timing_rpt
 report_power > ${top_module}.power_rpt
 write_test_protocol -output ${top_module}.spf
-Writing test protocol file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/divider_dshift.spf' for mode 'Internal_scan'...
+Writing test protocol file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/divider_dshift.spf' for mode 'Internal_scan'...
 1
 write -hierarchy -format verilog -output ${top_module}_scan.v
-Writing verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/divider_dshift_scan.v'.
+Writing verilog file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/divider_dshift_scan.v'.
 Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
 1
 write -hierarchy -format ddc -output ${top_module}.ddc
@@ -264,7 +264,7 @@ Writing ddc file 'divider_dshift.ddc'.
 1
 write_sdf -version 2.1 -context verilog ${top_module}.sdf 
 Information: Annotated 'cell' delays are assumed to include load delay. (UID-282)
-Information: Writing timing information to file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/divider_dshift.sdf'. (WT-3)
+Information: Writing timing information to file '/winhomes/oar5/hw4/ECE538Hw4-main/compilation/divider_dshift.sdf'. (WT-3)
 1
 exit
 

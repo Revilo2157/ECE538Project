@@ -1,5 +1,5 @@
 set library_name NangateOpenCellLibrary
-set link_library [list * ../nangate_scan.db]
+set link_library [list * nangate_scan.db]
 
 set top_module $::env(top)
 
