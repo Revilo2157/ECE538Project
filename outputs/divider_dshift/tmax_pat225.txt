@@ -31,7 +31,7 @@ read_netlist $scan_lib -library
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
  Begin reading netlist ( ./gate/divider_dshift/divider_dshift_scan.v )...
  End parsing Verilog file ./gate/divider_dshift/divider_dshift_scan.v with 0 errors.
- End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.02 sec, Memory=1MB
+ End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.01 sec, Memory=1MB
 run_build_model $top_module
  ------------------------------------------------------------------------------
  Begin build model for topcut = divider_dshift ...
@@ -40,10 +40,10 @@ run_build_model $top_module
  Warning: Rule B9 (undriven module internal net) was violated 8 times.
  Warning: Rule B10 (unconnected module internal net) was violated 8 times.
  Warning: Rule N21 (unsupported UDP entry) was violated 2 times.
- End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
+ End build model: #primitives=5439, CPU_time=0.02 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
- End learning analyses, total learning CPU time=0.11 sec.
+ End learning analyses, total learning CPU time=0.12 sec.
  ------------------------------------------------------------------------------
 # ignoring warnings like N20 or B10
 # Set STIL file from DFT Compiler
@@ -85,7 +85,7 @@ run_drc
  ------------------------------------------------------------------------------
  Warning: Rule V14 (missing state) was violated 1 times.
  There were 1 violations that occurred during DRC process.
- Design rules checking was successful, total CPU time=0.02 sec.
+ Design rules checking was successful, total CPU time=0.03 sec.
  ------------------------------------------------------------------------------
 read_timing ./SDD/slack.dat
  reading slack data file ./SDD/slack.dat.
@@ -103,42 +103,42 @@ set max_patterns $::env(patterns)
 225
 set time_per_run $::env(time)
 5
-set_atpg -patterns $max_patterns -abort_limit $time_per_run
+set_atpg -patterns $max_patterns -time "{0.01 ${time_per_run}}"
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
  ----------------------------------------------------------
  #patterns     #faults     #ATPG faults  test      process
  stored     detect/active  red/au/abort  coverage  CPU time
  ---------  -------------  ------------  --------  --------
- Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=5...
- 31           2124  11352         0/4/0    48.90%      0.07
- 63            779  10561        0/16/1    58.64%      0.14
- 95            452  10092        0/33/1    64.52%      0.19
- 127           235   9828        0/62/5    67.56%      0.24
- 159           192   9605        0/93/7    70.39%      0.30
- 191           154   9404       0/140/7    72.55%      0.35
- 223           122   9159      0/263/10    73.90%      0.40
- 225             9   9148      0/265/10    74.01%      0.41
+ Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
+ 32           2103  11373         0/4/1    48.93%      0.10
+ 64            789  10569        0/19/1    59.21%      0.18
+ 96            483  10068        0/37/1    65.04%      0.23
+ 128           305   9733        0/67/1    68.98%      0.28
+ 160           178   9526        0/96/3    71.23%      0.34
+ 192           162   9309       0/151/3    73.35%      0.40
+ 224           109   9117       0/234/4    74.90%      0.45
+ 225             6   9107       0/238/4    74.96%      0.46
  Warning: ATPG terminated due to meeting pattern count limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      10918
-   detected_by_simulation         DS       (618)
+ Detected                         DT      11058
+   detected_by_simulation         DS       (678)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (9028)
+   transition-partially_detected   TP      (9108)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU        265
-   atpg_untestable-not_detected   AN       (265)
- Not detected                     ND       3569
-   not-controlled                 NC        (80)
-   not-observed                   NO      (3489)
+ ATPG untestable                  AU        238
+   atpg_untestable-not_detected   AN       (238)
+ Not detected                     ND       3456
+   not-controlled                 NC        (37)
+   not-observed                   NO      (3419)
  -----------------------------------------------
  total faults                             14752
- test coverage                            74.01%
+ test coverage                            74.96%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
@@ -149,7 +149,7 @@ run_atpg basic_scan_only -ndetects 1
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 83538672.00
+ SDQL 81591928.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
  Patterns written reference 903 V statements, generating 27119 test cycles
  End writing file 'pattern_sdd_slack.stil' with 225 patterns, File_size = 300048, CPU_time = 0.0 sec.

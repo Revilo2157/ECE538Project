@@ -25,13 +25,13 @@ read_netlist -delete
 read_netlist $scan_lib -library
  Begin reading netlist ( ./nangate_scan.v )...
  End parsing Verilog file ./nangate_scan.v with 0 errors.
- End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.00 sec, Memory=0MB
+ End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.01 sec, Memory=0MB
 # read in user's synthesized verilog code
 #read_netlist $synthesized_files
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
  Begin reading netlist ( ./gate/divider_dshift/divider_dshift_scan.v )...
  End parsing Verilog file ./gate/divider_dshift/divider_dshift_scan.v with 0 errors.
- End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.01 sec, Memory=1MB
+ End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.02 sec, Memory=1MB
 run_build_model $top_module
  ------------------------------------------------------------------------------
  Begin build model for topcut = divider_dshift ...
@@ -43,7 +43,7 @@ run_build_model $top_module
  End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
- End learning analyses, total learning CPU time=0.11 sec.
+ End learning analyses, total learning CPU time=0.13 sec.
  ------------------------------------------------------------------------------
 # ignoring warnings like N20 or B10
 # Set STIL file from DFT Compiler
@@ -61,7 +61,7 @@ run_drc
  Test protocol file reading completed, CPU time=0.00 sec.
  ------------------------------------------------------------------------------
  Begin simulating test protocol procedures...
- Test protocol simulation completed, CPU time=0.00 sec.
+ Test protocol simulation completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  Begin scan chain operation checking...
  Chain 1 successfully traced with 117 scan_cells.
@@ -85,7 +85,7 @@ run_drc
  ------------------------------------------------------------------------------
  Warning: Rule V14 (missing state) was violated 1 times.
  There were 1 violations that occurred during DRC process.
- Design rules checking was successful, total CPU time=0.02 sec.
+ Design rules checking was successful, total CPU time=0.03 sec.
  ------------------------------------------------------------------------------
 read_timing ./SDD/slack.dat
  reading slack data file ./SDD/slack.dat.
@@ -103,40 +103,40 @@ set max_patterns $::env(patterns)
 175
 set time_per_run $::env(time)
 5
-set_atpg -patterns $max_patterns -abort_limit $time_per_run
+set_atpg -patterns $max_patterns -time "{0.01 ${time_per_run}}"
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
  ----------------------------------------------------------
  #patterns     #faults     #ATPG faults  test      process
  stored     detect/active  red/au/abort  coverage  CPU time
  ---------  -------------  ------------  --------  --------
- Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=5...
- 31           2124  11352         0/4/0    48.90%      0.08
- 63            779  10561        0/16/1    58.64%      0.14
- 95            452  10092        0/33/1    64.52%      0.19
- 127           235   9828        0/62/5    67.56%      0.25
- 159           192   9605        0/93/7    70.39%      0.30
- 175            63   9526       0/109/7    71.54%      0.34
+ Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
+ 31           2124  11352         0/4/0    48.90%      0.11
+ 63            766  10574        0/16/0    59.02%      0.18
+ 95            397  10162        0/31/0    63.72%      0.23
+ 124           304   9830        0/59/0    68.10%      0.29
+ 155           203   9595        0/91/1    71.03%      0.34
+ 175           124   9440       0/122/2    72.32%      0.39
  Warning: ATPG terminated due to meeting pattern count limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      10553
-   detected_by_simulation         DS       (588)
+ Detected                         DT      10669
+   detected_by_simulation         DS       (645)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (8693)
+   transition-partially_detected   TP      (8752)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU        109
-   atpg_untestable-not_detected   AN       (109)
- Not detected                     ND       4090
-   not-controlled                 NC        (83)
-   not-observed                   NO      (4007)
+ ATPG untestable                  AU        122
+   atpg_untestable-not_detected   AN       (122)
+ Not detected                     ND       3961
+   not-controlled                 NC        (34)
+   not-observed                   NO      (3927)
  -----------------------------------------------
  total faults                             14752
- test coverage                            71.54%
+ test coverage                            72.32%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
@@ -147,7 +147,7 @@ run_atpg basic_scan_only -ndetects 1
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 91814016.00
+ SDQL 89701888.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
  Patterns written reference 703 V statements, generating 21119 test cycles
  End writing file 'pattern_sdd_slack.stil' with 175 patterns, File_size = 240548, CPU_time = 0.0 sec.

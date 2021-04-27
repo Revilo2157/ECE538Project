@@ -58,7 +58,7 @@ done
 echo
 echo Starting Time
 export patterns=200
-for time in $(seq 1 1 10)
+for time in $(seq 0.01 0.01 0.5)
 do
 	echo
 	echo Doing $time seconds
