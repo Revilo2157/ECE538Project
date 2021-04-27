@@ -1,0 +1,651 @@
+STIL 1.0 {
+    Design 2005;
+}
+Header {
+    Title "Minimal STIL for design `divider_dshift'";
+    Date "Tue Apr 27 06:05:36 2021";
+    Source "DFT Compiler F-2011.09";
+}
+Signals {
+    "i_clk" In;
+    "i_dividend[0]" In;
+    "i_dividend[10]" In;
+    "i_dividend[11]" In;
+    "i_dividend[12]" In;
+    "i_dividend[13]" In;
+    "i_dividend[14]" In;
+    "i_dividend[15]" In;
+    "i_dividend[16]" In;
+    "i_dividend[17]" In;
+    "i_dividend[18]" In;
+    "i_dividend[19]" In;
+    "i_dividend[1]" In;
+    "i_dividend[20]" In;
+    "i_dividend[21]" In;
+    "i_dividend[22]" In;
+    "i_dividend[23]" In;
+    "i_dividend[24]" In;
+    "i_dividend[25]" In;
+    "i_dividend[26]" In;
+    "i_dividend[27]" In;
+    "i_dividend[28]" In;
+    "i_dividend[29]" In;
+    "i_dividend[2]" In;
+    "i_dividend[30]" In;
+    "i_dividend[31]" In;
+    "i_dividend[3]" In;
+    "i_dividend[4]" In;
+    "i_dividend[5]" In;
+    "i_dividend[6]" In;
+    "i_dividend[7]" In;
+    "i_dividend[8]" In;
+    "i_dividend[9]" In;
+    "i_divisor[0]" In;
+    "i_divisor[10]" In;
+    "i_divisor[11]" In;
+    "i_divisor[12]" In;
+    "i_divisor[13]" In;
+    "i_divisor[14]" In;
+    "i_divisor[15]" In;
+    "i_divisor[16]" In;
+    "i_divisor[17]" In;
+    "i_divisor[18]" In;
+    "i_divisor[19]" In;
+    "i_divisor[1]" In;
+    "i_divisor[20]" In;
+    "i_divisor[21]" In;
+    "i_divisor[22]" In;
+    "i_divisor[23]" In;
+    "i_divisor[24]" In;
+    "i_divisor[25]" In;
+    "i_divisor[26]" In;
+    "i_divisor[27]" In;
+    "i_divisor[28]" In;
+    "i_divisor[29]" In;
+    "i_divisor[2]" In;
+    "i_divisor[30]" In;
+    "i_divisor[31]" In;
+    "i_divisor[3]" In;
+    "i_divisor[4]" In;
+    "i_divisor[5]" In;
+    "i_divisor[6]" In;
+    "i_divisor[7]" In;
+    "i_divisor[8]" In;
+    "i_divisor[9]" In;
+    "i_rst" In;
+    "i_start" In;
+    "o_quotient[0]" Out;
+    "o_quotient[10]" Out;
+    "o_quotient[11]" Out;
+    "o_quotient[12]" Out;
+    "o_quotient[13]" Out;
+    "o_quotient[14]" Out;
+    "o_quotient[15]" Out;
+    "o_quotient[16]" Out;
+    "o_quotient[17]" Out;
+    "o_quotient[18]" Out;
+    "o_quotient[19]" Out;
+    "o_quotient[1]" Out;
+    "o_quotient[20]" Out;
+    "o_quotient[21]" Out;
+    "o_quotient[22]" Out;
+    "o_quotient[23]" Out;
+    "o_quotient[24]" Out;
+    "o_quotient[25]" Out;
+    "o_quotient[26]" Out;
+    "o_quotient[27]" Out;
+    "o_quotient[28]" Out;
+    "o_quotient[29]" Out;
+    "o_quotient[2]" Out;
+    "o_quotient[30]" Out;
+    "o_quotient[31]" Out;
+    "o_quotient[3]" Out;
+    "o_quotient[4]" Out;
+    "o_quotient[5]" Out;
+    "o_quotient[6]" Out;
+    "o_quotient[7]" Out;
+    "o_quotient[8]" Out;
+    "o_quotient[9]" Out;
+    "o_ready" Out;
+    "o_remainder[0]" Out;
+    "o_remainder[10]" Out;
+    "o_remainder[11]" Out;
+    "o_remainder[12]" Out;
+    "o_remainder[13]" Out;
+    "o_remainder[14]" Out;
+    "o_remainder[15]" Out;
+    "o_remainder[16]" Out;
+    "o_remainder[17]" Out;
+    "o_remainder[18]" Out;
+    "o_remainder[19]" Out;
+    "o_remainder[1]" Out;
+    "o_remainder[20]" Out;
+    "o_remainder[21]" Out;
+    "o_remainder[22]" Out;
+    "o_remainder[23]" Out;
+    "o_remainder[24]" Out;
+    "o_remainder[25]" Out;
+    "o_remainder[26]" Out;
+    "o_remainder[27]" Out;
+    "o_remainder[28]" Out;
+    "o_remainder[29]" Out;
+    "o_remainder[2]" Out;
+    "o_remainder[30]" Out;
+    "o_remainder[31]" Out;
+    "o_remainder[3]" Out;
+    "o_remainder[4]" Out;
+    "o_remainder[5]" Out;
+    "o_remainder[6]" Out;
+    "o_remainder[7]" Out;
+    "o_remainder[8]" Out;
+    "o_remainder[9]" Out;
+    "test_si1" In;
+    "test_so1" Out;
+    "test_si2" In;
+    "test_si3" In;
+    "test_so3" Out;
+    "test_se" In;
+}
+SignalGroups {
+    "_si" = '"test_si1" + "test_si2" + "test_si3"' {
+        ScanIn;
+    }
+    "_so" = '"o_remainder[31]" + "test_so1" + "test_so3"' {
+        ScanOut;
+    }
+    "_clk" = '"i_clk" + "i_rst"';
+    "all_inputs" = '"i_clk" + "i_dividend[0]" + "i_dividend[10]" + 
+    "i_dividend[11]" + "i_dividend[12]" + "i_dividend[13]" + "i_dividend[14]" + 
+    "i_dividend[15]" + "i_dividend[16]" + "i_dividend[17]" + "i_dividend[18]" + 
+    "i_dividend[19]" + "i_dividend[1]" + "i_dividend[20]" + "i_dividend[21]" + 
+    "i_dividend[22]" + "i_dividend[23]" + "i_dividend[24]" + "i_dividend[25]" + 
+    "i_dividend[26]" + "i_dividend[27]" + "i_dividend[28]" + "i_dividend[29]" + 
+    "i_dividend[2]" + "i_dividend[30]" + "i_dividend[31]" + "i_dividend[3]" + 
+    "i_dividend[4]" + "i_dividend[5]" + "i_dividend[6]" + "i_dividend[7]" + 
+    "i_dividend[8]" + "i_dividend[9]" + "i_divisor[0]" + "i_divisor[10]" + 
+    "i_divisor[11]" + "i_divisor[12]" + "i_divisor[13]" + "i_divisor[14]" + 
+    "i_divisor[15]" + "i_divisor[16]" + "i_divisor[17]" + "i_divisor[18]" + 
+    "i_divisor[19]" + "i_divisor[1]" + "i_divisor[20]" + "i_divisor[21]" + 
+    "i_divisor[22]" + "i_divisor[23]" + "i_divisor[24]" + "i_divisor[25]" + 
+    "i_divisor[26]" + "i_divisor[27]" + "i_divisor[28]" + "i_divisor[29]" + 
+    "i_divisor[2]" + "i_divisor[30]" + "i_divisor[31]" + "i_divisor[3]" + 
+    "i_divisor[4]" + "i_divisor[5]" + "i_divisor[6]" + "i_divisor[7]" + 
+    "i_divisor[8]" + "i_divisor[9]" + "i_rst" + "i_start" + "test_si1" + 
+    "test_si2" + "test_si3" + "test_se"';
+    "all_outputs" = '"o_quotient[0]" + "o_quotient[10]" + "o_quotient[11]" + 
+    "o_quotient[12]" + "o_quotient[13]" + "o_quotient[14]" + "o_quotient[15]" + 
+    "o_quotient[16]" + "o_quotient[17]" + "o_quotient[18]" + "o_quotient[19]" + 
+    "o_quotient[1]" + "o_quotient[20]" + "o_quotient[21]" + "o_quotient[22]" + 
+    "o_quotient[23]" + "o_quotient[24]" + "o_quotient[25]" + "o_quotient[26]" + 
+    "o_quotient[27]" + "o_quotient[28]" + "o_quotient[29]" + "o_quotient[2]" + 
+    "o_quotient[30]" + "o_quotient[31]" + "o_quotient[3]" + "o_quotient[4]" + 
+    "o_quotient[5]" + "o_quotient[6]" + "o_quotient[7]" + "o_quotient[8]" + 
+    "o_quotient[9]" + "o_ready" + "o_remainder[0]" + "o_remainder[10]" + 
+    "o_remainder[11]" + "o_remainder[12]" + "o_remainder[13]" + 
+    "o_remainder[14]" + "o_remainder[15]" + "o_remainder[16]" + 
+    "o_remainder[17]" + "o_remainder[18]" + "o_remainder[19]" + "o_remainder[1]" 
+    + "o_remainder[20]" + "o_remainder[21]" + "o_remainder[22]" + 
+    "o_remainder[23]" + "o_remainder[24]" + "o_remainder[25]" + 
+    "o_remainder[26]" + "o_remainder[27]" + "o_remainder[28]" + 
+    "o_remainder[29]" + "o_remainder[2]" + "o_remainder[30]" + "o_remainder[31]" 
+    + "o_remainder[3]" + "o_remainder[4]" + "o_remainder[5]" + "o_remainder[6]" 
+    + "o_remainder[7]" + "o_remainder[8]" + "o_remainder[9]" + "test_so1" + 
+    "test_so3"';
+    "all_ports" = '"all_inputs" + "all_outputs"';
+    "_pi" = '"i_clk" + "i_dividend[0]" + "i_dividend[10]" + "i_dividend[11]" + 
+    "i_dividend[12]" + "i_dividend[13]" + "i_dividend[14]" + "i_dividend[15]" + 
+    "i_dividend[16]" + "i_dividend[17]" + "i_dividend[18]" + "i_dividend[19]" + 
+    "i_dividend[1]" + "i_dividend[20]" + "i_dividend[21]" + "i_dividend[22]" + 
+    "i_dividend[23]" + "i_dividend[24]" + "i_dividend[25]" + "i_dividend[26]" + 
+    "i_dividend[27]" + "i_dividend[28]" + "i_dividend[29]" + "i_dividend[2]" + 
+    "i_dividend[30]" + "i_dividend[31]" + "i_dividend[3]" + "i_dividend[4]" + 
+    "i_dividend[5]" + "i_dividend[6]" + "i_dividend[7]" + "i_dividend[8]" + 
+    "i_dividend[9]" + "i_divisor[0]" + "i_divisor[10]" + "i_divisor[11]" + 
+    "i_divisor[12]" + "i_divisor[13]" + "i_divisor[14]" + "i_divisor[15]" + 
+    "i_divisor[16]" + "i_divisor[17]" + "i_divisor[18]" + "i_divisor[19]" + 
+    "i_divisor[1]" + "i_divisor[20]" + "i_divisor[21]" + "i_divisor[22]" + 
+    "i_divisor[23]" + "i_divisor[24]" + "i_divisor[25]" + "i_divisor[26]" + 
+    "i_divisor[27]" + "i_divisor[28]" + "i_divisor[29]" + "i_divisor[2]" + 
+    "i_divisor[30]" + "i_divisor[31]" + "i_divisor[3]" + "i_divisor[4]" + 
+    "i_divisor[5]" + "i_divisor[6]" + "i_divisor[7]" + "i_divisor[8]" + 
+    "i_divisor[9]" + "i_rst" + "i_start" + "test_si1" + "test_si2" + "test_si3" 
+    + "test_se"';
+    "_po" = '"o_quotient[0]" + "o_quotient[10]" + "o_quotient[11]" + 
+    "o_quotient[12]" + "o_quotient[13]" + "o_quotient[14]" + "o_quotient[15]" + 
+    "o_quotient[16]" + "o_quotient[17]" + "o_quotient[18]" + "o_quotient[19]" + 
+    "o_quotient[1]" + "o_quotient[20]" + "o_quotient[21]" + "o_quotient[22]" + 
+    "o_quotient[23]" + "o_quotient[24]" + "o_quotient[25]" + "o_quotient[26]" + 
+    "o_quotient[27]" + "o_quotient[28]" + "o_quotient[29]" + "o_quotient[2]" + 
+    "o_quotient[30]" + "o_quotient[31]" + "o_quotient[3]" + "o_quotient[4]" + 
+    "o_quotient[5]" + "o_quotient[6]" + "o_quotient[7]" + "o_quotient[8]" + 
+    "o_quotient[9]" + "o_ready" + "o_remainder[0]" + "o_remainder[10]" + 
+    "o_remainder[11]" + "o_remainder[12]" + "o_remainder[13]" + 
+    "o_remainder[14]" + "o_remainder[15]" + "o_remainder[16]" + 
+    "o_remainder[17]" + "o_remainder[18]" + "o_remainder[19]" + "o_remainder[1]" 
+    + "o_remainder[20]" + "o_remainder[21]" + "o_remainder[22]" + 
+    "o_remainder[23]" + "o_remainder[24]" + "o_remainder[25]" + 
+    "o_remainder[26]" + "o_remainder[27]" + "o_remainder[28]" + 
+    "o_remainder[29]" + "o_remainder[2]" + "o_remainder[30]" + "o_remainder[31]" 
+    + "o_remainder[3]" + "o_remainder[4]" + "o_remainder[5]" + "o_remainder[6]" 
+    + "o_remainder[7]" + "o_remainder[8]" + "o_remainder[9]" + "test_so1" + 
+    "test_so3"';
+}
+ScanStructures {
+    ScanChain "1" {
+        ScanLength 117;
+        ScanIn "test_si1";
+        ScanOut "test_so1";
+        ScanEnable "test_se";
+        ScanMasterClock "i_clk";
+    }
+    ScanChain "2" {
+        ScanLength 117;
+        ScanIn "test_si2";
+        ScanOut "o_remainder[31]";
+        ScanEnable "test_se";
+        ScanMasterClock "i_clk";
+    }
+    ScanChain "3" {
+        ScanLength 117;
+        ScanIn "test_si3";
+        ScanOut "test_so3";
+        ScanEnable "test_se";
+        ScanMasterClock "i_clk";
+    }
+}
+Timing {
+    WaveformTable "_default_WFT_" {
+        Period '100ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '40ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '40ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '40ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '40ns' L;
+                }
+            }
+            "i_clk" {
+                P {
+                    '0ns' D;
+                    '45ns' U;
+                    '55ns' D;
+                }
+            }
+            "i_rst" {
+                P {
+                    '0ns' U;
+                    '45ns' D;
+                    '55ns' U;
+                }
+            }
+        }
+    }
+    WaveformTable "_multiclock_capture_WFT_" {
+        Period '100ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '40ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '40ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '40ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '40ns' L;
+                }
+            }
+            "i_clk" {
+                P {
+                    '0ns' D;
+                    '45ns' U;
+                    '55ns' D;
+                }
+            }
+            "i_rst" {
+                P {
+                    '0ns' U;
+                    '45ns' D;
+                    '55ns' U;
+                }
+            }
+        }
+    }
+    WaveformTable "_allclock_capture_WFT_" {
+        Period '100ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '40ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '40ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '40ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '40ns' L;
+                }
+            }
+            "i_clk" {
+                P {
+                    '0ns' D;
+                    '45ns' U;
+                    '55ns' D;
+                }
+            }
+            "i_rst" {
+                P {
+                    '0ns' U;
+                    '45ns' D;
+                    '55ns' U;
+                }
+            }
+        }
+    }
+    WaveformTable "_allclock_launch_WFT_" {
+        Period '100ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '40ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '40ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '40ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '40ns' L;
+                }
+            }
+            "i_clk" {
+                P {
+                    '0ns' D;
+                    '45ns' U;
+                    '55ns' D;
+                }
+            }
+            "i_rst" {
+                P {
+                    '0ns' U;
+                    '45ns' D;
+                    '55ns' U;
+                }
+            }
+        }
+    }
+    WaveformTable "_allclock_launch_capture_WFT_" {
+        Period '100ns';
+        Waveforms {
+            "all_inputs" {
+                0 {
+                    '0ns' D;
+                }
+            }
+            "all_inputs" {
+                1 {
+                    '0ns' U;
+                }
+            }
+            "all_inputs" {
+                Z {
+                    '0ns' Z;
+                }
+            }
+            "all_inputs" {
+                N {
+                    '0ns' N;
+                }
+            }
+            "all_outputs" {
+                X {
+                    '0ns' X;
+                    '40ns' X;
+                }
+            }
+            "all_outputs" {
+                H {
+                    '0ns' X;
+                    '40ns' H;
+                }
+            }
+            "all_outputs" {
+                T {
+                    '0ns' X;
+                    '40ns' T;
+                }
+            }
+            "all_outputs" {
+                L {
+                    '0ns' X;
+                    '40ns' L;
+                }
+            }
+            "i_clk" {
+                P {
+                    '0ns' D;
+                    '45ns' U;
+                    '55ns' D;
+                }
+            }
+            "i_rst" {
+                P {
+                    '0ns' U;
+                    '45ns' D;
+                    '55ns' U;
+                }
+            }
+        }
+    }
+}
+Procedures {
+    "multiclock_capture" {
+        W "_multiclock_capture_WFT_";
+        C {
+            "all_inputs" = 0 \r64 N 1 \r5 N;
+            "all_outputs" = \r67 X;
+        }
+        V {
+            "_pi" = \r71 #;
+            "_po" = \r67 #;
+        }
+    }
+    "allclock_capture" {
+        W "_allclock_capture_WFT_";
+        C {
+            "all_inputs" = 0 \r64 N 1 \r5 N;
+            "all_outputs" = \r67 X;
+        }
+        V {
+            "_pi" = \r71 #;
+            "_po" = \r67 #;
+        }
+    }
+    "allclock_launch" {
+        W "_allclock_launch_WFT_";
+        C {
+            "all_inputs" = 0 \r64 N 1 \r5 N;
+            "all_outputs" = \r67 X;
+        }
+        V {
+            "_pi" = \r71 #;
+            "_po" = \r67 #;
+        }
+    }
+    "allclock_launch_capture" {
+        W "_allclock_launch_capture_WFT_";
+        C {
+            "all_inputs" = 0 \r64 N 1 \r5 N;
+            "all_outputs" = \r67 X;
+        }
+        V {
+            "_pi" = \r71 #;
+            "_po" = \r67 #;
+        }
+    }
+    "load_unload" {
+        W "_default_WFT_";
+        C {
+            "all_inputs" = 0 \r64 N 1 \r5 N;
+            "all_outputs" = \r67 X;
+        }
+        "Internal_scan_pre_shift" : V {
+            "test_se" = 1;
+        }
+        Shift {
+            V {
+                "_clk" = P1;
+                "_si" = ###;
+                "_so" = ###;
+            }
+        }
+    }
+}
+MacroDefs {
+    "test_setup" {
+        W "_default_WFT_";
+        C {
+            "all_inputs" = \r71 N;
+            "all_outputs" = \r67 X;
+        }
+        V {
+            "i_clk" = 0;
+            "i_rst" = 1;
+        }
+        V {
+        }
+    }
+}
+

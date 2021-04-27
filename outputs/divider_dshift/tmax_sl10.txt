@@ -1,0 +1,36 @@
+
+                                  TetraMAX(R) 
+
+
+              Version O-2018.06-SP5-1 for linux64 - Mar 08, 2019  
+
+                    Copyright (c) 1996 - 2019 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+ Tcl mode is on by default. Use -notcl to run in native mode.
+ Executing startup file "/home/software/synopsys/tetramax/txs/O-2018.06-SP5-1/admin/setup/tmaxtcl.rc".
+set top_module $::env(top)
+divider_dshift
+set scan_lib ./nangate_scan.v
+./nangate_scan.v
+set stil_file  ./gate/${top_module}/${top_module}.spf 
+./gate/divider_dshift/divider_dshift.spf
+read_netlist -delete
+ Warning: All netlist and library module data are now deleted. (M41)
+# read in scan cell library
+read_netlist $scan_lib -library
+ Begin reading netlist ( ./nangate_scan.v )...
+ Error: Unable to open read file "./nangate_scan.v". (M5)
+ Information: script './tcl/sddatpg.tcl'
+	stopped at line 8 due to error. (CMD-081)
+
+Extended error info:
+
+    while executing
+"read_netlist $scan_lib -library"
+ -- End Extended Error Info
+BUILD-T> BUILD-T> 

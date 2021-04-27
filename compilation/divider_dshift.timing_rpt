@@ -1,0 +1,64 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : divider_dshift
+Version: F-2011.09
+Date   : Tue Apr 27 06:05:44 2021
+****************************************
+
+Operating Conditions: typical   Library: nangate_scan
+Wire Load Model Mode: top
+
+  Startpoint: q_reg_1_ (rising edge-triggered flip-flop clocked by i_clk)
+  Endpoint: reg_b_reg_30_
+            (rising edge-triggered flip-flop clocked by i_clk)
+  Path Group: i_clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  divider_dshift     5K_hvratio_1_1        nangate_scan
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock i_clk (rise edge)                  0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  q_reg_1_/CK (SDFFR_X2)                   0.00       0.00 r
+  q_reg_1_/Q (SDFFR_X2)                    0.16       0.16 r
+  U2542/ZN (NAND3_X2)                      0.04       0.21 f
+  U295/ZN (OR3_X2)                         0.11       0.32 f
+  U294/ZN (OR3_X2)                         0.11       0.43 f
+  U293/ZN (OR3_X2)                         0.11       0.54 f
+  U292/ZN (OR3_X2)                         0.11       0.65 f
+  U291/ZN (OR3_X2)                         0.11       0.75 f
+  U290/ZN (OR3_X2)                         0.11       0.86 f
+  U289/ZN (OR3_X2)                         0.11       0.97 f
+  U288/ZN (OR3_X2)                         0.11       1.08 f
+  U287/ZN (OR3_X2)                         0.11       1.19 f
+  U286/ZN (OR3_X2)                         0.11       1.30 f
+  U285/ZN (OR3_X2)                         0.11       1.41 f
+  U284/ZN (OR3_X2)                         0.11       1.52 f
+  U283/ZN (OR3_X2)                         0.10       1.62 f
+  U2311/ZN (AOI21_X2)                      0.06       1.68 r
+  U2540/ZN (OAI21_X2)                      0.04       1.71 f
+  U151/ZN (AOI221_X2)                      0.07       1.78 r
+  U150/ZN (OAI221_X2)                      0.05       1.83 f
+  reg_b_reg_30_/D (SDFFR_X2)               0.00       1.83 f
+  data arrival time                                   1.83
+
+  clock i_clk (rise edge)                 10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  reg_b_reg_30_/CK (SDFFR_X2)              0.00      10.00 r
+  library setup time                      -0.11       9.89
+  data required time                                  9.89
+  -----------------------------------------------------------
+  data required time                                  9.89
+  data arrival time                                  -1.83
+  -----------------------------------------------------------
+  slack (MET)                                         8.06
+
+
+1

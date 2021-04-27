@@ -1,0 +1,411 @@
+ 
+****************************************
+Report : Scan path
+Design : divider_dshift
+Version: F-2011.09
+Date   : Tue Apr 27 06:05:44 2021
+****************************************
+
+========================================
+TEST MODE: Internal_scan
+VIEW     : Specification
+========================================
+No scan path defined in this mode.
+
+ 
+****************************************
+Report : Scan path
+Design : divider_dshift
+Version: F-2011.09
+Date   : Tue Apr 27 06:05:44 2021
+****************************************
+
+========================================
+TEST MODE: Internal_scan
+VIEW     : Existing DFT
+========================================
+
+========================================
+AS SPECIFIED BY USER
+========================================
+
+
+========================================
+AS BUILT BY insert_dft
+========================================
+
+Scan_path    Len   ScanDataIn  ScanDataOut ScanEnable  MasterClock SlaveClock
+-----------  ----- ----------- ----------- ----------- ----------- -----------
+I 1          117   test_si1    test_so1    test_se     i_clk       -
+I 2          117   test_si2    o_remainder[31] test_se i_clk       -
+I 3          117   test_si3    test_so3    test_se     i_clk       -
+
+========================================
+TEST MODE: Internal_scan
+VIEW     : Existing DFT
+========================================
+
+========================================
+AS SPECIFIED BY USER
+========================================
+
+
+========================================
+AS BUILT BY insert_dft
+========================================
+
+Scan_path     Cell_#    Instance_name            Clocks
+---------     ------    -------------            ------
+I 1           0         DD_sign_reg              i_clk 
+              1         DR_reg_0_
+              2         DR_reg_1_
+              3         DR_reg_2_
+              4         DR_reg_3_
+              5         DR_reg_4_
+              6         DR_reg_5_
+              7         DR_reg_6_
+              8         DR_reg_7_
+              9         DR_reg_8_
+              10        DR_reg_9_
+              11        DR_reg_10_
+              12        DR_reg_11_
+              13        DR_reg_12_
+              14        DR_reg_13_
+              15        DR_reg_14_
+              16        DR_reg_15_
+              17        DR_reg_16_
+              18        DR_reg_17_
+              19        DR_reg_18_
+              20        DR_reg_19_
+              21        DR_reg_20_
+              22        DR_reg_21_
+              23        DR_reg_22_
+              24        DR_reg_23_
+              25        DR_reg_24_
+              26        DR_reg_25_
+              27        DR_reg_26_
+              28        DR_reg_27_
+              29        DR_reg_28_
+              30        DR_reg_29_
+              31        DR_reg_30_
+              32        DR_reg_31_
+              33        PR_1_reg_0_
+              34        PR_1_reg_1_
+              35        PR_1_reg_2_
+              36        PR_1_reg_3_
+              37        PR_1_reg_4_
+              38        PR_1_reg_5_
+              39        PR_1_reg_6_
+              40        PR_1_reg_7_
+              41        PR_1_reg_8_
+              42        PR_1_reg_9_
+              43        PR_1_reg_10_
+              44        PR_1_reg_11_
+              45        PR_1_reg_12_
+              46        PR_1_reg_13_
+              47        PR_1_reg_14_
+              48        PR_1_reg_15_
+              49        PR_1_reg_16_
+              50        PR_1_reg_17_
+              51        PR_1_reg_18_
+              52        PR_1_reg_19_
+              53        PR_1_reg_20_
+              54        PR_1_reg_21_
+              55        PR_1_reg_22_
+              56        PR_1_reg_23_
+              57        PR_1_reg_24_
+              58        PR_1_reg_25_
+              59        PR_1_reg_26_
+              60        PR_1_reg_27_
+              61        PR_1_reg_28_
+              62        PR_1_reg_29_
+              63        PR_1_reg_30_
+              64        PR_1_reg_31_
+              65        PR_reg_0_
+              66        PR_reg_1_
+              67        PR_reg_2_
+              68        PR_reg_3_
+              69        PR_reg_4_
+              70        PR_reg_5_
+              71        PR_reg_6_
+              72        PR_reg_7_
+              73        PR_reg_8_
+              74        PR_reg_9_
+              75        PR_reg_10_
+              76        PR_reg_11_
+              77        PR_reg_12_
+              78        PR_reg_13_
+              79        PR_reg_14_
+              80        PR_reg_15_
+              81        PR_reg_16_
+              82        PR_reg_17_
+              83        PR_reg_18_
+              84        PR_reg_19_
+              85        PR_reg_20_
+              86        PR_reg_21_
+              87        PR_reg_22_
+              88        PR_reg_23_
+              89        PR_reg_24_
+              90        PR_reg_25_
+              91        PR_reg_26_
+              92        PR_reg_27_
+              93        PR_reg_28_
+              94        PR_reg_29_
+              95        PR_reg_30_
+              96        PR_reg_31_
+              97        ct_1_en_1_reg
+              98        ct_1_en_reg
+              99        ct_1_reg_0_
+              100       ct_1_reg_1_
+              101       ct_1_reg_2_
+              102       ct_1_reg_3_
+              103       ct_1_reg_4_
+              104       ct_1_reg_5_
+              105       ct_reg_0_
+              106       ct_reg_1_
+              107       ct_reg_2_
+              108       ct_reg_3_
+              109       ct_reg_4_
+              110       ct_reg_5_
+              111       nq_reg_0_
+              112       nq_reg_1_
+              113       nq_reg_2_
+              114       nq_reg_3_
+              115       nq_reg_4_
+              116       nq_reg_5_
+I 2           0         nq_reg_6_                i_clk 
+              1         nq_reg_7_
+              2         nq_reg_8_
+              3         nq_reg_9_
+              4         nq_reg_10_
+              5         nq_reg_11_
+              6         nq_reg_12_
+              7         nq_reg_13_
+              8         nq_reg_14_
+              9         nq_reg_15_
+              10        nq_reg_16_
+              11        nq_reg_17_
+              12        nq_reg_18_
+              13        nq_reg_19_
+              14        nq_reg_20_
+              15        nq_reg_21_
+              16        nq_reg_22_
+              17        nq_reg_23_
+              18        nq_reg_24_
+              19        nq_reg_25_
+              20        nq_reg_26_
+              21        nq_reg_27_
+              22        nq_reg_28_
+              23        nq_reg_29_
+              24        nq_reg_30_
+              25        o_quotient_reg_0_
+              26        o_quotient_reg_1_
+              27        o_quotient_reg_2_
+              28        o_quotient_reg_3_
+              29        o_quotient_reg_4_
+              30        o_quotient_reg_5_
+              31        o_quotient_reg_6_
+              32        o_quotient_reg_7_
+              33        o_quotient_reg_8_
+              34        o_quotient_reg_9_
+              35        o_quotient_reg_10_
+              36        o_quotient_reg_11_
+              37        o_quotient_reg_12_
+              38        o_quotient_reg_13_
+              39        o_quotient_reg_14_
+              40        o_quotient_reg_15_
+              41        o_quotient_reg_16_
+              42        o_quotient_reg_17_
+              43        o_quotient_reg_18_
+              44        o_quotient_reg_19_
+              45        o_quotient_reg_20_
+              46        o_quotient_reg_21_
+              47        o_quotient_reg_22_
+              48        o_quotient_reg_23_
+              49        o_quotient_reg_24_
+              50        o_quotient_reg_25_
+              51        o_quotient_reg_26_
+              52        o_quotient_reg_27_
+              53        o_quotient_reg_28_
+              54        o_quotient_reg_29_
+              55        o_quotient_reg_30_
+              56        o_quotient_reg_31_
+              57        o_remainder_reg_0_
+              58        o_remainder_reg_1_
+              59        o_remainder_reg_2_
+              60        o_remainder_reg_3_
+              61        o_remainder_reg_4_
+              62        o_remainder_reg_5_
+              63        o_remainder_reg_6_
+              64        o_remainder_reg_7_
+              65        o_remainder_reg_8_
+              66        o_remainder_reg_9_
+              67        o_remainder_reg_10_
+              68        o_remainder_reg_11_
+              69        o_remainder_reg_12_
+              70        o_remainder_reg_13_
+              71        o_remainder_reg_14_
+              72        o_remainder_reg_15_
+              73        o_remainder_reg_16_
+              74        o_remainder_reg_17_
+              75        o_remainder_reg_18_
+              76        o_remainder_reg_19_
+              77        o_remainder_reg_20_
+              78        o_remainder_reg_21_
+              79        o_remainder_reg_22_
+              80        o_remainder_reg_23_
+              81        o_remainder_reg_24_
+              82        o_remainder_reg_25_
+              83        o_remainder_reg_26_
+              84        o_remainder_reg_27_
+              85        o_remainder_reg_28_
+              86        o_remainder_reg_29_
+              87        o_remainder_reg_30_
+              88        q_reg_0_
+              89        q_reg_1_
+              90        q_reg_2_
+              91        q_reg_3_
+              92        q_reg_4_
+              93        q_reg_5_
+              94        q_reg_6_
+              95        q_reg_7_
+              96        q_reg_8_
+              97        q_reg_9_
+              98        q_reg_10_
+              99        q_reg_11_
+              100       q_reg_12_
+              101       q_reg_13_
+              102       q_reg_14_
+              103       q_reg_15_
+              104       q_reg_16_
+              105       q_reg_17_
+              106       q_reg_18_
+              107       q_reg_19_
+              108       q_reg_20_
+              109       q_reg_21_
+              110       q_reg_22_
+              111       q_reg_23_
+              112       q_reg_24_
+              113       q_reg_25_
+              114       q_reg_26_
+              115       q_reg_27_
+              116       o_remainder_reg_31_
+I 3           0         q_reg_28_                i_clk 
+              1         q_reg_29_
+              2         q_reg_30_
+              3         ready_reg
+              4         reg_a_reg_0_
+              5         reg_a_reg_1_
+              6         reg_a_reg_2_
+              7         reg_a_reg_3_
+              8         reg_a_reg_4_
+              9         reg_a_reg_5_
+              10        reg_a_reg_6_
+              11        reg_a_reg_7_
+              12        reg_a_reg_8_
+              13        reg_a_reg_9_
+              14        reg_a_reg_10_
+              15        reg_a_reg_11_
+              16        reg_a_reg_12_
+              17        reg_a_reg_13_
+              18        reg_a_reg_14_
+              19        reg_a_reg_15_
+              20        reg_a_reg_16_
+              21        reg_a_reg_17_
+              22        reg_a_reg_18_
+              23        reg_a_reg_19_
+              24        reg_a_reg_20_
+              25        reg_a_reg_21_
+              26        reg_a_reg_22_
+              27        reg_a_reg_23_
+              28        reg_a_reg_24_
+              29        reg_a_reg_25_
+              30        reg_a_reg_26_
+              31        reg_a_reg_27_
+              32        reg_a_reg_28_
+              33        reg_a_reg_29_
+              34        reg_a_reg_30_
+              35        reg_a_reg_31_
+              36        reg_b_reg_0_
+              37        reg_b_reg_1_
+              38        reg_b_reg_2_
+              39        reg_b_reg_3_
+              40        reg_b_reg_4_
+              41        reg_b_reg_5_
+              42        reg_b_reg_6_
+              43        reg_b_reg_7_
+              44        reg_b_reg_8_
+              45        reg_b_reg_9_
+              46        reg_b_reg_10_
+              47        reg_b_reg_11_
+              48        reg_b_reg_12_
+              49        reg_b_reg_13_
+              50        reg_b_reg_14_
+              51        reg_b_reg_15_
+              52        reg_b_reg_16_
+              53        reg_b_reg_17_
+              54        reg_b_reg_18_
+              55        reg_b_reg_19_
+              56        reg_b_reg_20_
+              57        reg_b_reg_21_
+              58        reg_b_reg_22_
+              59        reg_b_reg_23_
+              60        reg_b_reg_24_
+              61        reg_b_reg_25_
+              62        reg_b_reg_26_
+              63        reg_b_reg_27_
+              64        reg_b_reg_28_
+              65        reg_b_reg_29_
+              66        reg_b_reg_30_
+              67        reg_b_reg_31_
+              68        reg_carry_reg
+              69        sdata_reg_0_
+              70        sdata_reg_1_
+              71        sdata_reg_2_
+              72        sdata_reg_3_
+              73        sdata_reg_4_
+              74        sdata_reg_5_
+              75        sdata_reg_6_
+              76        sdata_reg_7_
+              77        sdata_reg_8_
+              78        sdata_reg_9_
+              79        sdata_reg_10_
+              80        sdata_reg_11_
+              81        sdata_reg_12_
+              82        sdata_reg_13_
+              83        sdata_reg_14_
+              84        sdata_reg_15_
+              85        sdata_reg_16_
+              86        sdata_reg_17_
+              87        sdata_reg_18_
+              88        sdata_reg_19_
+              89        sdata_reg_20_
+              90        sdata_reg_21_
+              91        sdata_reg_22_
+              92        sdata_reg_23_
+              93        sdata_reg_24_
+              94        sdata_reg_25_
+              95        sdata_reg_26_
+              96        sdata_reg_27_
+              97        sdata_reg_28_
+              98        sdata_reg_29_
+              99        sdata_reg_30_
+              100       sdata_reg_31_
+              101       shifted_1_reg_0_
+              102       shifted_1_reg_1_
+              103       shifted_1_reg_2_
+              104       shifted_1_reg_3_
+              105       shifted_reg_0_
+              106       shifted_reg_1_
+              107       shifted_reg_2_
+              108       shifted_reg_3_
+              109       state_reg_0_
+              110       state_reg_1_
+              111       state_reg_2_
+              112       state_reg_3_
+              113       state_reg_4_
+              114       state_reg_5_
+              115       state_reg_reg_0_
+              116       state_reg_reg_1_
+
+1

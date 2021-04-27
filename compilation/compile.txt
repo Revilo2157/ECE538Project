@@ -1,0 +1,1025 @@
+
+Warning:  Site Information is not available ... Have you run install_site?
+
+
+                      Design Compiler Graphical
+                            DC Ultra (TM)
+                             DFTMAX (TM)
+                         Power Compiler (TM)
+                           DesignWare (R)
+                           DC Expert (TM)
+                         Design Vision (TM)
+                          HDL Compiler (TM)
+                         VHDL Compiler (TM)
+                            DFT Compiler
+                        Library Compiler (TM)
+                         Design Compiler(R)
+
+             Version F-2011.09 for linux -- Aug 22, 2011
+               Copyright (c) 1988-2011 Synopsys, Inc.
+
+This software and the associated documentation are confidential and 
+proprietary to Synopsys, Inc. Your use or disclosure of this software 
+is subject to the terms and conditions of a written license agreement 
+between you, or your company, and Synopsys, Inc.
+
+Initializing...
+set target_library "NangateOpenCellLibrary.db "
+NangateOpenCellLibrary.db 
+set link_library   "* NangateOpenCellLibrary.db"
+* NangateOpenCellLibrary.db
+set timestamp [clock format [clock scan now] -format "%Y-%m-%d_%H-%M"]
+2021-04-27_06-05
+set enable_page_mode false
+false
+set sh_new_variable_message false
+false
+set verilogout_no_tri true
+true
+set verilogout_show_unconnected_pins true
+true
+set hdlin_auto_save_templates true
+true
+set sourceDir $::env(source)
+/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift
+set top_module $::env(top)
+divider_dshift
+set clk_pin $::env(clk)
+i_clk
+############# Elaborate Design ################
+foreach {file} [ls ${sourceDir}/*.v] { 
+    read_file -format verilog ${file}
+}
+Loading db file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db'
+Loading db file '/home/software/synopsys/synthesis/F-2011.09/libraries/syn/gtech.db'
+Loading db file '/home/software/synopsys/synthesis/F-2011.09/libraries/syn/standard.sldb'
+  Loading link library 'NangateOpenCellLibrary'
+  Loading link library 'gtech'
+Loading verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/CLA_fixed.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/CLA_fixed.v
+Presto compilation completed successfully.
+Current design is now '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/operator_A.db:operator_A'
+Loaded 4 designs.
+Current design is 'operator_A'.
+Loading verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v
+Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:94: signed to unsigned conversion occurs. (VER-318)
+Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:98: signed to unsigned assignment occurs. (VER-318)
+Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:175: unsigned to signed assignment occurs. (VER-318)
+Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v:230: unsigned to signed assignment occurs. (VER-318)
+
+Statistics for case statements in always block at line 134 in file
+	'/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           162            |     no/auto      |
+|           164            |     no/auto      |
+===============================================
+
+Inferred memory devices in process
+	in routine divider_dshift line 134 in file
+		'/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.v'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|      PR_1_reg       | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      sdata_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       DR_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       ct_reg        | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   o_remainder_reg   | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    reg_carry_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      ready_reg      | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|    state_reg_reg    | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     ct_1_en_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   o_quotient_reg    | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      reg_b_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|        q_reg        | Flip-flop |  31   |  N  | N  | Y  | N  | N  | N  | N  |
+|       nq_reg        | Flip-flop |  31   |  N  | N  | Y  | N  | N  | N  | N  |
+|      reg_a_reg      | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   1   |  N  | N  | N  | Y  | N  | N  | N  |
+|    ct_1_en_1_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      ct_1_reg       | Flip-flop |   6   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     DD_sign_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     shifted_reg     | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    shifted_1_reg    | Flip-flop |   5   |  Y  | N  | Y  | N  | N  | N  | N  |
+|       PR_reg        | Flip-flop |  32   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully.
+Current design is now '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.db:divider_dshift'
+Loaded 1 design.
+Current design is 'divider_dshift'.
+Loading verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/shifter.v'
+Detecting input file type automatically (-rtl or -netlist).
+Running DC verilog reader
+Reading with Presto HDL Compiler (equivalent to -rtl option).
+Running PRESTO HDLC
+Compiling source file /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/shifter.v
+Warning:  /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/shifter.v:278: signed to unsigned assignment occurs. (VER-318)
+Presto compilation completed successfully.
+Current design is now '/winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/shift_1b.db:shift_1b'
+Loaded 5 designs.
+Current design is 'shift_1b'.
+current_design ${top_module}
+Current design is 'divider_dshift'.
+{divider_dshift}
+link
+
+  Linking design 'divider_dshift'
+  Using the following designs and libraries:
+  --------------------------------------------------------------------------
+  * (10 designs)              /winhomes/oar5/Hw4/ECE538Hw4-main/rtl/divider_dshift/divider_dshift.db, etc
+  NangateOpenCellLibrary (library) /winhomes/oar5/Hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db
+
+1
+compile
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | F-2011.09-DWBB_201109.0 |     *     |
+| Licensed DW Building Blocks        |                         |           |
+============================================================================
+
+
+Information: There are 63 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'operator_C_0'
+  Processing 'operator_B_0'
+  Processing 'operator_A_0'
+  Processing 'adder_32bit_0'
+  Processing 'shift_1b_0'
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_MUX/str/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_MUX/str/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/2/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/2/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/3/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/3/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/4/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/4/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/5/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_mmux/str/5/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_NOT/str/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_NOT/str/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+  Processing 'shift_3b_0'
+  Processing 'shift_7b'
+  Processing 'shifter'
+  Processing 'divider_dshift'
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_inc/rpl/31/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_NAND2/str/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_NAND2/str/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_inc/rpl/31/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW_rash/mx2/32/6/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW_rash/mx2/32/6/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_add/rpl/31/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_add/rpl/31/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_add/cla/31/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_add/cla/31/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_incdec/rpl/31/NangateOpenCellLibrary_8421/element.ddc could not be written.  (SYNOPT-1)
+Warning: Cache element /winhomes/oar5/synopsys_cache_F-2011.09/DW01/DW01_incdec/rpl/31/NangateOpenCellLibrary_8421_8167_4702/element.ddc could not be written.  (SYNOPT-1)
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: Design 'divider_dshift' has no optimization constraints set. (OPT-108)
+
+  Beginning Implementation Selection
+  ----------------------------------
+  Processing 'divider_dshift_DW_rash_0'
+  Processing 'divider_dshift_DW01_inc_0'
+  Processing 'divider_dshift_DW01_inc_1'
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+  Structuring 'shift_3b_2'
+  Mapping 'shift_3b_2'
+  Structuring 'shift_3b_1'
+  Mapping 'shift_3b_1'
+  Structuring 'shift_1b_3'
+  Mapping 'shift_1b_3'
+  Structuring 'shift_1b_2'
+  Mapping 'shift_1b_2'
+  Structuring 'shift_1b_1'
+  Mapping 'shift_1b_1'
+  Structuring 'operator_C_63'
+  Mapping 'operator_C_63'
+  Structuring 'operator_C_62'
+  Mapping 'operator_C_62'
+  Structuring 'operator_C_61'
+  Mapping 'operator_C_61'
+  Structuring 'operator_C_60'
+  Mapping 'operator_C_60'
+  Structuring 'operator_C_59'
+  Mapping 'operator_C_59'
+  Structuring 'operator_C_58'
+  Mapping 'operator_C_58'
+  Structuring 'operator_C_57'
+  Mapping 'operator_C_57'
+  Structuring 'operator_C_56'
+  Mapping 'operator_C_56'
+  Structuring 'operator_C_55'
+  Mapping 'operator_C_55'
+  Structuring 'operator_C_54'
+  Mapping 'operator_C_54'
+  Structuring 'operator_C_53'
+  Mapping 'operator_C_53'
+  Structuring 'operator_C_52'
+  Mapping 'operator_C_52'
+  Structuring 'operator_C_51'
+  Mapping 'operator_C_51'
+  Structuring 'operator_C_50'
+  Mapping 'operator_C_50'
+  Structuring 'operator_C_49'
+  Mapping 'operator_C_49'
+  Structuring 'operator_C_48'
+  Mapping 'operator_C_48'
+  Structuring 'operator_C_47'
+  Mapping 'operator_C_47'
+  Structuring 'operator_C_46'
+  Mapping 'operator_C_46'
+  Structuring 'operator_C_45'
+  Mapping 'operator_C_45'
+  Structuring 'operator_C_44'
+  Mapping 'operator_C_44'
+  Structuring 'operator_C_43'
+  Mapping 'operator_C_43'
+  Structuring 'operator_C_42'
+  Mapping 'operator_C_42'
+  Structuring 'operator_C_41'
+  Mapping 'operator_C_41'
+  Structuring 'operator_C_40'
+  Mapping 'operator_C_40'
+  Structuring 'operator_C_39'
+  Mapping 'operator_C_39'
+  Structuring 'operator_C_38'
+  Mapping 'operator_C_38'
+  Structuring 'operator_C_37'
+  Mapping 'operator_C_37'
+  Structuring 'operator_C_36'
+  Mapping 'operator_C_36'
+  Structuring 'operator_C_35'
+  Mapping 'operator_C_35'
+  Structuring 'operator_C_34'
+  Mapping 'operator_C_34'
+  Structuring 'operator_C_33'
+  Mapping 'operator_C_33'
+  Structuring 'operator_C_32'
+  Mapping 'operator_C_32'
+  Structuring 'operator_C_31'
+  Mapping 'operator_C_31'
+  Structuring 'operator_C_30'
+  Mapping 'operator_C_30'
+  Structuring 'operator_C_29'
+  Mapping 'operator_C_29'
+  Structuring 'operator_C_28'
+  Mapping 'operator_C_28'
+  Structuring 'operator_C_27'
+  Mapping 'operator_C_27'
+  Structuring 'operator_C_26'
+  Mapping 'operator_C_26'
+  Structuring 'operator_C_25'
+  Mapping 'operator_C_25'
+  Structuring 'operator_C_24'
+  Mapping 'operator_C_24'
+  Structuring 'operator_C_23'
+  Mapping 'operator_C_23'
+  Structuring 'operator_C_22'
+  Mapping 'operator_C_22'
+  Structuring 'operator_C_21'
+  Mapping 'operator_C_21'
+  Structuring 'operator_C_20'
+  Mapping 'operator_C_20'
+  Structuring 'operator_C_19'
+  Mapping 'operator_C_19'
+  Structuring 'operator_C_18'
+  Mapping 'operator_C_18'
+  Structuring 'operator_C_17'
+  Mapping 'operator_C_17'
+  Structuring 'operator_C_16'
+  Mapping 'operator_C_16'
+  Structuring 'operator_C_15'
+  Mapping 'operator_C_15'
+  Structuring 'operator_C_14'
+  Mapping 'operator_C_14'
+  Structuring 'operator_C_13'
+  Mapping 'operator_C_13'
+  Structuring 'operator_C_12'
+  Mapping 'operator_C_12'
+  Structuring 'operator_C_11'
+  Mapping 'operator_C_11'
+  Structuring 'operator_C_10'
+  Mapping 'operator_C_10'
+  Structuring 'operator_C_9'
+  Mapping 'operator_C_9'
+  Structuring 'operator_C_8'
+  Mapping 'operator_C_8'
+  Structuring 'operator_C_7'
+  Mapping 'operator_C_7'
+  Structuring 'operator_C_6'
+  Mapping 'operator_C_6'
+  Structuring 'operator_C_5'
+  Mapping 'operator_C_5'
+  Structuring 'operator_C_4'
+  Mapping 'operator_C_4'
+  Structuring 'operator_C_3'
+  Mapping 'operator_C_3'
+  Structuring 'operator_C_2'
+  Mapping 'operator_C_2'
+  Structuring 'operator_C_1'
+  Mapping 'operator_C_1'
+  Structuring 'operator_B_97'
+  Mapping 'operator_B_97'
+  Structuring 'operator_B_96'
+  Mapping 'operator_B_96'
+  Structuring 'operator_B_95'
+  Mapping 'operator_B_95'
+  Structuring 'operator_B_94'
+  Mapping 'operator_B_94'
+  Structuring 'operator_B_93'
+  Mapping 'operator_B_93'
+  Structuring 'operator_B_92'
+  Mapping 'operator_B_92'
+  Structuring 'operator_B_91'
+  Mapping 'operator_B_91'
+  Structuring 'operator_B_90'
+  Mapping 'operator_B_90'
+  Structuring 'operator_B_89'
+  Mapping 'operator_B_89'
+  Structuring 'operator_B_88'
+  Mapping 'operator_B_88'
+  Structuring 'operator_B_87'
+  Mapping 'operator_B_87'
+  Structuring 'operator_B_86'
+  Mapping 'operator_B_86'
+  Structuring 'operator_B_85'
+  Mapping 'operator_B_85'
+  Structuring 'operator_B_84'
+  Mapping 'operator_B_84'
+  Structuring 'operator_B_83'
+  Mapping 'operator_B_83'
+  Structuring 'operator_B_82'
+  Mapping 'operator_B_82'
+  Structuring 'operator_B_81'
+  Mapping 'operator_B_81'
+  Structuring 'operator_B_80'
+  Mapping 'operator_B_80'
+  Structuring 'operator_B_79'
+  Mapping 'operator_B_79'
+  Structuring 'operator_B_78'
+  Mapping 'operator_B_78'
+  Structuring 'operator_B_77'
+  Mapping 'operator_B_77'
+  Structuring 'operator_B_76'
+  Mapping 'operator_B_76'
+  Structuring 'operator_B_75'
+  Mapping 'operator_B_75'
+  Structuring 'operator_B_74'
+  Mapping 'operator_B_74'
+  Structuring 'operator_B_73'
+  Mapping 'operator_B_73'
+  Structuring 'operator_B_72'
+  Mapping 'operator_B_72'
+  Structuring 'operator_B_71'
+  Mapping 'operator_B_71'
+  Structuring 'operator_B_70'
+  Mapping 'operator_B_70'
+  Structuring 'operator_B_69'
+  Mapping 'operator_B_69'
+  Structuring 'operator_B_68'
+  Mapping 'operator_B_68'
+  Structuring 'operator_B_67'
+  Mapping 'operator_B_67'
+  Structuring 'operator_B_66'
+  Mapping 'operator_B_66'
+  Structuring 'operator_B_65'
+  Mapping 'operator_B_65'
+  Structuring 'operator_B_64'
+  Mapping 'operator_B_64'
+  Structuring 'operator_B_63'
+  Mapping 'operator_B_63'
+  Structuring 'operator_B_62'
+  Mapping 'operator_B_62'
+  Structuring 'operator_B_61'
+  Mapping 'operator_B_61'
+  Structuring 'operator_B_60'
+  Mapping 'operator_B_60'
+  Structuring 'operator_B_59'
+  Mapping 'operator_B_59'
+  Structuring 'operator_B_58'
+  Mapping 'operator_B_58'
+  Structuring 'operator_B_57'
+  Mapping 'operator_B_57'
+  Structuring 'operator_B_56'
+  Mapping 'operator_B_56'
+  Structuring 'operator_B_55'
+  Mapping 'operator_B_55'
+  Structuring 'operator_B_54'
+  Mapping 'operator_B_54'
+  Structuring 'operator_B_53'
+  Mapping 'operator_B_53'
+  Structuring 'operator_B_52'
+  Mapping 'operator_B_52'
+  Structuring 'operator_B_51'
+  Mapping 'operator_B_51'
+  Structuring 'operator_B_50'
+  Mapping 'operator_B_50'
+  Structuring 'operator_B_49'
+  Mapping 'operator_B_49'
+  Structuring 'operator_B_48'
+  Mapping 'operator_B_48'
+  Structuring 'operator_B_47'
+  Mapping 'operator_B_47'
+  Structuring 'operator_B_46'
+  Mapping 'operator_B_46'
+  Structuring 'operator_B_45'
+  Mapping 'operator_B_45'
+  Structuring 'operator_B_44'
+  Mapping 'operator_B_44'
+  Structuring 'operator_B_43'
+  Mapping 'operator_B_43'
+  Structuring 'operator_B_42'
+  Mapping 'operator_B_42'
+  Structuring 'operator_B_41'
+  Mapping 'operator_B_41'
+  Structuring 'operator_B_40'
+  Mapping 'operator_B_40'
+  Structuring 'operator_B_39'
+  Mapping 'operator_B_39'
+  Structuring 'operator_B_38'
+  Mapping 'operator_B_38'
+  Structuring 'operator_B_37'
+  Mapping 'operator_B_37'
+  Structuring 'operator_B_36'
+  Mapping 'operator_B_36'
+  Structuring 'operator_B_35'
+  Mapping 'operator_B_35'
+  Structuring 'operator_B_34'
+  Mapping 'operator_B_34'
+  Structuring 'operator_B_33'
+  Mapping 'operator_B_33'
+  Structuring 'operator_B_32'
+  Mapping 'operator_B_32'
+  Structuring 'operator_B_31'
+  Mapping 'operator_B_31'
+  Structuring 'operator_B_30'
+  Mapping 'operator_B_30'
+  Structuring 'operator_B_29'
+  Mapping 'operator_B_29'
+  Structuring 'operator_B_28'
+  Mapping 'operator_B_28'
+  Structuring 'operator_B_27'
+  Mapping 'operator_B_27'
+  Structuring 'operator_B_26'
+  Mapping 'operator_B_26'
+  Structuring 'operator_B_25'
+  Mapping 'operator_B_25'
+  Structuring 'operator_B_24'
+  Mapping 'operator_B_24'
+  Structuring 'operator_B_23'
+  Mapping 'operator_B_23'
+  Structuring 'operator_B_22'
+  Mapping 'operator_B_22'
+  Structuring 'operator_B_21'
+  Mapping 'operator_B_21'
+  Structuring 'operator_B_20'
+  Mapping 'operator_B_20'
+  Structuring 'operator_B_19'
+  Mapping 'operator_B_19'
+  Structuring 'operator_B_18'
+  Mapping 'operator_B_18'
+  Structuring 'operator_B_17'
+  Mapping 'operator_B_17'
+  Structuring 'operator_B_16'
+  Mapping 'operator_B_16'
+  Structuring 'operator_B_15'
+  Mapping 'operator_B_15'
+  Structuring 'operator_B_14'
+  Mapping 'operator_B_14'
+  Structuring 'operator_B_13'
+  Mapping 'operator_B_13'
+  Structuring 'operator_B_12'
+  Mapping 'operator_B_12'
+  Structuring 'operator_B_11'
+  Mapping 'operator_B_11'
+  Structuring 'operator_B_10'
+  Mapping 'operator_B_10'
+  Structuring 'operator_B_9'
+  Mapping 'operator_B_9'
+  Structuring 'operator_B_8'
+  Mapping 'operator_B_8'
+  Structuring 'operator_B_7'
+  Mapping 'operator_B_7'
+  Structuring 'operator_B_6'
+  Mapping 'operator_B_6'
+  Structuring 'operator_B_5'
+  Mapping 'operator_B_5'
+  Structuring 'operator_B_4'
+  Mapping 'operator_B_4'
+  Structuring 'operator_B_3'
+  Mapping 'operator_B_3'
+  Structuring 'operator_B_2'
+  Mapping 'operator_B_2'
+  Structuring 'operator_B_1'
+  Mapping 'operator_B_1'
+  Structuring 'operator_A_63'
+  Mapping 'operator_A_63'
+  Structuring 'operator_A_62'
+  Mapping 'operator_A_62'
+  Structuring 'operator_A_61'
+  Mapping 'operator_A_61'
+  Structuring 'operator_A_60'
+  Mapping 'operator_A_60'
+  Structuring 'operator_A_59'
+  Mapping 'operator_A_59'
+  Structuring 'operator_A_58'
+  Mapping 'operator_A_58'
+  Structuring 'operator_A_57'
+  Mapping 'operator_A_57'
+  Structuring 'operator_A_56'
+  Mapping 'operator_A_56'
+  Structuring 'operator_A_55'
+  Mapping 'operator_A_55'
+  Structuring 'operator_A_54'
+  Mapping 'operator_A_54'
+  Structuring 'operator_A_53'
+  Mapping 'operator_A_53'
+  Structuring 'operator_A_52'
+  Mapping 'operator_A_52'
+  Structuring 'operator_A_51'
+  Mapping 'operator_A_51'
+  Structuring 'operator_A_50'
+  Mapping 'operator_A_50'
+  Structuring 'operator_A_49'
+  Mapping 'operator_A_49'
+  Structuring 'operator_A_48'
+  Mapping 'operator_A_48'
+  Structuring 'operator_A_47'
+  Mapping 'operator_A_47'
+  Structuring 'operator_A_46'
+  Mapping 'operator_A_46'
+  Structuring 'operator_A_45'
+  Mapping 'operator_A_45'
+  Structuring 'operator_A_44'
+  Mapping 'operator_A_44'
+  Structuring 'operator_A_43'
+  Mapping 'operator_A_43'
+  Structuring 'operator_A_42'
+  Mapping 'operator_A_42'
+  Structuring 'operator_A_41'
+  Mapping 'operator_A_41'
+  Structuring 'operator_A_40'
+  Mapping 'operator_A_40'
+  Structuring 'operator_A_39'
+  Mapping 'operator_A_39'
+  Structuring 'operator_A_38'
+  Mapping 'operator_A_38'
+  Structuring 'operator_A_37'
+  Mapping 'operator_A_37'
+  Structuring 'operator_A_36'
+  Mapping 'operator_A_36'
+  Structuring 'operator_A_35'
+  Mapping 'operator_A_35'
+  Structuring 'operator_A_34'
+  Mapping 'operator_A_34'
+  Structuring 'operator_A_33'
+  Mapping 'operator_A_33'
+  Structuring 'operator_A_32'
+  Mapping 'operator_A_32'
+  Structuring 'operator_A_31'
+  Mapping 'operator_A_31'
+  Structuring 'operator_A_30'
+  Mapping 'operator_A_30'
+  Structuring 'operator_A_29'
+  Mapping 'operator_A_29'
+  Structuring 'operator_A_28'
+  Mapping 'operator_A_28'
+  Structuring 'operator_A_27'
+  Mapping 'operator_A_27'
+  Structuring 'operator_A_26'
+  Mapping 'operator_A_26'
+  Structuring 'operator_A_25'
+  Mapping 'operator_A_25'
+  Structuring 'operator_A_24'
+  Mapping 'operator_A_24'
+  Structuring 'operator_A_23'
+  Mapping 'operator_A_23'
+  Structuring 'operator_A_22'
+  Mapping 'operator_A_22'
+  Structuring 'operator_A_21'
+  Mapping 'operator_A_21'
+  Structuring 'operator_A_20'
+  Mapping 'operator_A_20'
+  Structuring 'operator_A_19'
+  Mapping 'operator_A_19'
+  Structuring 'operator_A_18'
+  Mapping 'operator_A_18'
+  Structuring 'operator_A_17'
+  Mapping 'operator_A_17'
+  Structuring 'operator_A_16'
+  Mapping 'operator_A_16'
+  Structuring 'operator_A_15'
+  Mapping 'operator_A_15'
+  Structuring 'operator_A_14'
+  Mapping 'operator_A_14'
+  Structuring 'operator_A_13'
+  Mapping 'operator_A_13'
+  Structuring 'operator_A_12'
+  Mapping 'operator_A_12'
+  Structuring 'operator_A_11'
+  Mapping 'operator_A_11'
+  Structuring 'operator_A_10'
+  Mapping 'operator_A_10'
+  Structuring 'operator_A_9'
+  Mapping 'operator_A_9'
+  Structuring 'operator_A_8'
+  Mapping 'operator_A_8'
+  Structuring 'operator_A_7'
+  Mapping 'operator_A_7'
+  Structuring 'operator_A_6'
+  Mapping 'operator_A_6'
+  Structuring 'operator_A_5'
+  Mapping 'operator_A_5'
+  Structuring 'operator_A_4'
+  Mapping 'operator_A_4'
+  Structuring 'operator_A_3'
+  Mapping 'operator_A_3'
+  Structuring 'operator_A_2'
+  Mapping 'operator_A_2'
+  Structuring 'operator_A_1'
+  Mapping 'operator_A_1'
+  Structuring 'adder_32bit_1'
+  Mapping 'adder_32bit_1'
+  Structuring 'operator_B_0'
+  Mapping 'operator_B_0'
+  Structuring 'operator_C_0'
+  Mapping 'operator_C_0'
+  Structuring 'operator_A_0'
+  Mapping 'operator_A_0'
+  Structuring 'shift_7b'
+  Mapping 'shift_7b'
+  Structuring 'shift_3b_0'
+  Mapping 'shift_3b_0'
+  Structuring 'shift_1b_0'
+  Mapping 'shift_1b_0'
+  Structuring 'adder_32bit_0'
+  Mapping 'adder_32bit_0'
+  Structuring 'shifter'
+  Mapping 'shifter'
+  Structuring 'divider_dshift'
+  Mapping 'divider_dshift'
+Information: The register 'shifted_reg[4]' is a constant and will be removed. (OPT-1206)
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:06    4682.7      0.00       0.0    1342.9                          
+    0:00:06    4682.7      0.00       0.0    1342.9                          
+    0:00:06    4682.7      0.00       0.0    1342.9                          
+    0:00:06    4682.7      0.00       0.0    1342.9                          
+    0:00:07    4682.7      0.00       0.0    1342.9                          
+    0:00:07    4662.7      0.00       0.0    1342.9                          
+    0:00:07    4662.7      0.00       0.0    1342.9                          
+    0:00:07    4662.7      0.00       0.0    1342.9                          
+    0:00:07    4662.7      0.00       0.0    1342.9                          
+    0:00:07    4662.7      0.00       0.0    1342.9                          
+    0:00:07    4673.1      0.00       0.0     885.2                          
+    0:00:07    4676.8      0.00       0.0     710.1                          
+    0:00:07    4689.3      0.00       0.0     646.3                          
+    0:00:07    4689.8      0.00       0.0     639.4                          
+    0:00:07    4689.8      0.00       0.0     639.4                          
+    0:00:07    4689.8      0.00       0.0     639.4                          
+    0:00:07    4689.8      0.00       0.0     639.4                          
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    4689.8      0.00       0.0     639.4                          
+    0:00:07    4689.8      0.00       0.0     639.4                          
+    0:00:07    4689.8      0.00       0.0     639.4                          
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    4689.8      0.00       0.0     639.4                          
+    0:00:07    4705.5      0.00       0.0       0.0                          
+
+
+  Beginning Area-Recovery Phase  (cleanup)
+  -----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                            
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT         
+  --------- --------- --------- --------- --------- -------------------------
+    0:00:07    4705.5      0.00       0.0       0.0                          
+    0:00:07    4705.5      0.00       0.0       0.0                          
+    0:00:07    4658.2      0.00       0.0       0.0                          
+    0:00:07    4656.1      0.00       0.0       0.0                          
+    0:00:07    4654.5      0.00       0.0       0.0                          
+    0:00:07    4654.5      0.00       0.0       0.0                          
+    0:00:07    4654.5      0.00       0.0       0.0                          
+    0:00:07    4654.5      0.00       0.0       0.0                          
+    0:00:07    4654.5      0.00       0.0       0.0                          
+    0:00:07    4643.0      0.00       0.0       0.0                          
+    0:00:07    4643.0      0.00       0.0       0.0                          
+    0:00:07    4643.0      0.00       0.0       0.0                          
+    0:00:07    4643.0      0.00       0.0       0.0                          
+    0:00:07    4643.0      0.00       0.0       0.0                          
+    0:00:07    4643.0      0.00       0.0       0.0                          
+Loading db file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db'
+
+  Optimization Complete
+  ---------------------
+1
+uniquify -dont_skip_empty_designs
+1
+#set set_ultra_optimization true
+set all_input_but_clock  [remove_from_collection [all_inputs] $clk_pin]
+{i_rst i_dividend[31] i_dividend[30] i_dividend[29] i_dividend[28] i_dividend[27] i_dividend[26] i_dividend[25] i_dividend[24] i_dividend[23] i_dividend[22] i_dividend[21] i_dividend[20] i_dividend[19] i_dividend[18] i_dividend[17] i_dividend[16] i_dividend[15] i_dividend[14] i_dividend[13] i_dividend[12] i_dividend[11] i_dividend[10] i_dividend[9] i_dividend[8] i_dividend[7] i_dividend[6] i_dividend[5] i_dividend[4] i_dividend[3] i_dividend[2] i_dividend[1] i_dividend[0] i_divisor[31] i_divisor[30] i_divisor[29] i_divisor[28] i_divisor[27] i_divisor[26] i_divisor[25] i_divisor[24] i_divisor[23] i_divisor[22] i_divisor[21] i_divisor[20] i_divisor[19] i_divisor[18] i_divisor[17] i_divisor[16] i_divisor[15] i_divisor[14] i_divisor[13] i_divisor[12] i_divisor[11] i_divisor[10] i_divisor[9] i_divisor[8] i_divisor[7] i_divisor[6] i_divisor[5] i_divisor[4] i_divisor[3] i_divisor[2] i_divisor[1] i_divisor[0] i_start}
+###################################################################
+##...............define generated clock............................
+create_clock -period  2  [get_ports $clk_pin]
+1
+set_clock_uncertainty -setup 0.1 [get_ports $clk_pin]
+1
+set_clock_uncertainty -hold  0.1 [get_ports $clk_pin]
+1
+set_clock_transition 0.1 [get_clocks $clk_pin]
+1
+##.............delay and drive strength on input ports.............
+set_input_delay -max 0 -clock $clk_pin  $all_input_but_clock
+1
+set_input_delay -min 0 -clock $clk_pin  $all_input_but_clock
+1
+#set_driving_cell  -lib_cell INVX1 $all_input_but_clock
+##set_operating_conditions -min best -max worst
+set_wire_load_mode segmented
+1
+set_load 0.1 [all_inputs]
+1
+###################################################################
+check_design
+ 
+****************************************
+check_design summary:
+Version:     F-2011.09
+Date:        Tue Apr 27 06:05:23 2021
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                      4
+    Unconnected ports (LINT-28)                                     2
+    Feedthrough (LINT-29)                                           1
+    Constant outputs (LINT-52)                                      1
+
+Cells                                                              36
+    Connected to power or ground (LINT-32)                         33
+    Nets connected to multiple pins on same cell (LINT-33)          3
+--------------------------------------------------------------------------------
+
+Warning: In design 'divider_dshift_DW_rash_0', port 'DATA_TC' is not connected to any nets. (LINT-28)
+Warning: In design 'divider_dshift_DW_rash_0', port 'SH_TC' is not connected to any nets. (LINT-28)
+Warning: In design 'divider_dshift_DW_rash_0', input port 'A[31]' is connected directly to output port 'B[31]'. (LINT-29)
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[31]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[30]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[29]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[28]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[27]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[26]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[25]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[24]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[23]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[22]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[21]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[20]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[19]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[18]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[17]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[16]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[15]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[14]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[13]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[12]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[11]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[10]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[9]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[8]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[7]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'adder_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_a[6]' is connected to logic 0. 
+Warning: In design 'divider_dshift', a pin on submodule 'sra_198' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'DATA_TC' is connected to logic 1. 
+Warning: In design 'divider_dshift', a pin on submodule 'sra_198' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'SH_TC' is connected to logic 0. 
+Warning: In design 'shifter', a pin on submodule 'shift_3b_0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_shift[0]' is connected to logic 0. 
+Warning: In design 'shifter', a pin on submodule 'shift_3b_1' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_shift[0]' is connected to logic 0. 
+Warning: In design 'shifter', a pin on submodule 'shift_7b_0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_shift[2]' is connected to logic 0. 
+Warning: In design 'shifter', a pin on submodule 'shift_7b_0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_shift[1]' is connected to logic 0. 
+Warning: In design 'shifter', a pin on submodule 'shift_7b_0' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'i_shift[0]' is connected to logic 0. 
+Warning: In design 'divider_dshift', the same net is connected to more than one pin on submodule 'adder_1'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'i_a[31]', 'i_a[30]'', 'i_a[29]', 'i_a[28]', 'i_a[27]', 'i_a[26]', 'i_a[25]', 'i_a[24]', 'i_a[23]', 'i_a[22]', 'i_a[21]', 'i_a[20]', 'i_a[19]', 'i_a[18]', 'i_a[17]', 'i_a[16]', 'i_a[15]', 'i_a[14]', 'i_a[13]', 'i_a[12]', 'i_a[11]', 'i_a[10]', 'i_a[9]', 'i_a[8]', 'i_a[7]', 'i_a[6]'.
+Warning: In design 'divider_dshift', the same net is connected to more than one pin on submodule 'adder_1'. (LINT-33)
+   Net 'n1357' is connected to pins 'i_b[31]', 'i_b[30]'', 'i_b[29]', 'i_b[28]', 'i_b[27]', 'i_b[26]', 'i_b[25]', 'i_b[24]', 'i_b[23]', 'i_b[22]', 'i_b[21]', 'i_b[20]', 'i_b[19]', 'i_b[18]', 'i_b[17]', 'i_b[16]', 'i_b[15]', 'i_b[14]', 'i_b[13]', 'i_b[12]', 'i_b[11]', 'i_b[10]', 'i_b[9]', 'i_b[8]', 'i_b[7]', 'i_b[6]', 'i_b[5]', 'i_c'.
+Warning: In design 'shifter', the same net is connected to more than one pin on submodule 'shift_7b_0'. (LINT-33)
+   Net '*Logic0*' is connected to pins 'i_shift[2]', 'i_shift[1]'', 'i_shift[0]'.
+Warning: In design 'shifter', output port 'o_shifted[4]' is connected directly to 'logic 0'. (LINT-52)
+1
+set_max_area 0
+1
+set_fix_hold [all_clocks]
+1
+set verilogout_show_unconnected_pins true
+true
+set verilogout_no_tri true
+true
+set_fix_multiple_port_nets -all -buffer_constants
+1
+compile
+
+Information: There are 40 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'divider_dshift_DW01_inc_1'
+  Processing 'divider_dshift_DW01_inc_0'
+  Processing 'divider_dshift_DW_rash_0'
+  Processing 'operator_C_1'
+  Processing 'operator_B_1'
+  Processing 'operator_A_1'
+  Processing 'adder_32bit_1'
+  Processing 'shift_1b_1'
+  Processing 'shift_3b_1'
+  Processing 'shift_7b'
+  Processing 'shift_1b_2'
+  Processing 'shift_3b_2'
+  Processing 'shift_3b_0'
+  Processing 'shift_1b_0'
+  Processing 'shifter'
+  Processing 'divider_dshift'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+
+  Beginning Implementation Selection
+  ----------------------------------
+
+  Beginning Mapping Optimizations  (Medium effort)
+  -------------------------------
+Information: The register 'shifted_1_reg[4]' is a constant and will be removed. (OPT-1206)
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:03    6499.2      0.24      11.8       0.0                                0.00
+    0:00:03    6498.4      0.24      11.3       0.0                                0.00
+    0:00:03    6498.4      0.24      11.3       0.0                                0.00
+    0:00:03    6497.3      0.24      11.3       0.0                                0.00
+    0:00:03    6497.3      0.24      11.3       0.0                                0.00
+    0:00:03    4817.0      0.24       2.5       0.0                                0.00
+    0:00:04    4816.5      0.23       2.1       0.0                                0.00
+    0:00:04    4819.4      0.23       2.0       0.0                                0.00
+    0:00:04    4828.2      0.22       1.9       0.0                                0.00
+    0:00:04    4826.8      0.21       1.8       0.0                                0.00
+    0:00:04    4831.6      0.20       1.8       0.0                                0.00
+    0:00:04    4831.6      0.19       1.7       0.0                                0.00
+    0:00:04    4831.6      0.18       1.6       0.0                                0.00
+    0:00:04    4831.6      0.17       1.5       0.0                                0.00
+    0:00:04    4831.6      0.17       1.5       0.0                                0.00
+    0:00:04    4831.6      0.17       1.5       0.0                                0.00
+    0:00:04    4831.6      0.17       1.5       0.0                                0.00
+    0:00:04    4831.6      0.17       1.5       0.0                                0.00
+    0:00:04    4831.6      0.17       1.5       0.0                                0.00
+
+
+
+  Beginning Delay Optimization Phase
+  ----------------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:04    4831.6      0.17       1.5       0.0                                0.00
+    0:00:04    4831.9      0.13       1.3       0.0 reg_b_reg[30]/D                0.00
+    0:00:04    4833.0      0.10       1.1       0.0 reg_a_reg[30]/D                0.00
+    0:00:04    4837.2      0.00       0.0       0.0                                0.00
+    0:00:05    4736.7      0.00       0.0       0.0                                0.00
+
+
+  Beginning Design Rule Fixing  (min_path)
+  ----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:05    4736.7      0.00       0.0       0.0                               -4.65
+    0:00:06    4759.5      0.00       0.0       0.0 reg_a_reg[21]/D               -3.78
+    0:00:06    4786.4      0.00       0.0       0.0 sdata_reg[2]/D                -2.20
+    0:00:07    4813.5      0.00       0.0       0.0 sdata_reg[14]/D               -0.73
+    0:00:07    4835.1      0.00       0.0       0.0 reg_a_reg[16]/D               -0.05
+    0:00:07    4839.1      0.00       0.0       0.0                                0.00
+
+
+  Beginning Area-Recovery Phase  (max_area 0)
+  -----------------------------
+
+   ELAPSED            WORST NEG TOTAL NEG  DESIGN                             MIN DELAY
+    TIME      AREA      SLACK     SLACK   RULE COST         ENDPOINT            COST   
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:00:07    4839.1      0.00       0.0       0.0                                0.00
+    0:00:07    4839.1      0.00       0.0       0.0                                0.00
+    0:00:08    4826.0      0.00       0.0       0.0                                0.00
+    0:00:08    4819.9      0.01       0.0       0.0                                0.00
+    0:00:08    4815.7      0.01       0.0       0.0                                0.00
+    0:00:08    4811.9      0.01       0.0       0.0                                0.00
+    0:00:08    4810.6      0.01       0.0       0.0                                0.00
+    0:00:08    4810.6      0.01       0.0       0.0                                0.00
+    0:00:08    4811.4      0.00       0.0       0.0                                0.00
+    0:00:08    4799.7      0.00       0.0       0.0                                0.00
+    0:00:08    4799.7      0.00       0.0       0.0                                0.00
+    0:00:08    4799.7      0.00       0.0       0.0                                0.00
+    0:00:08    4799.7      0.00       0.0       0.0                                0.00
+    0:00:08    4799.7      0.00       0.0       0.0                                0.00
+    0:00:08    4799.7      0.00       0.0       0.0                                0.00
+    0:00:08    4743.8      0.00       0.0       0.0                                0.00
+    0:00:08    4715.1      0.00       0.0       0.0                                0.00
+    0:00:09    4690.4      0.00       0.0       0.0                                0.00
+    0:00:09    4690.4      0.00       0.0       0.0                                0.00
+    0:00:09    4690.4      0.00       0.0       0.0                                0.00
+    0:00:09    4690.4      0.00       0.0       0.0                                0.00
+    0:00:09    4690.4      0.00       0.0       0.0                                0.00
+    0:00:09    4690.4      0.00       0.0       0.0                                0.00
+    0:00:09    4690.9      0.00       0.0       0.0                                0.00
+Loading db file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/NangateOpenCellLibrary.db'
+
+  Optimization Complete
+  ---------------------
+1
+## Report Design
+define_name_rules verilog -case_insensitive
+1
+change_names -hierarchy -rules verilog
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+1
+ungroup -all -flatten
+Information: Updating design information... (UID-85)
+1
+write  -h -format verilog -output "${top_module}_gatelevel.v"
+Writing verilog file '/winhomes/oar5/Hw4/ECE538Hw4-main/compilation/divider_dshift_gatelevel.v'.
+1
+exit
+
+Thank you...

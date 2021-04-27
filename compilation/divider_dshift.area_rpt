@@ -1,0 +1,28 @@
+ 
+****************************************
+Report : area
+Design : divider_dshift
+Version: F-2011.09
+Date   : Tue Apr 27 06:05:44 2021
+****************************************
+
+Library(s) Used:
+
+    nangate_scan (File: /winhomes/oar5/Hw4/ECE538Hw4-main/compilation/nangate_scan.db)
+
+Number of ports:                          138
+Number of nets:                          2579
+Number of cells:                         2157
+Number of combinational cells:           1806
+Number of sequential cells:               351
+Number of macros:                           0
+Number of buf/inv:                        442
+Number of references:                      34
+
+Combinational area:       2092.622011
+Noncombinational area:    2427.781961
+Net Interconnect area:    1576.705850  
+
+Total cell area:          4520.403972
+Total area:               6097.109823
+1
