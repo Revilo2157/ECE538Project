@@ -25,7 +25,7 @@ read_netlist -delete
 read_netlist $scan_lib -library
  Begin reading netlist ( ./nangate_scan.v )...
  End parsing Verilog file ./nangate_scan.v with 0 errors.
- End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.01 sec, Memory=0MB
+ End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.00 sec, Memory=0MB
 # read in user's synthesized verilog code
 #read_netlist $synthesized_files
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
@@ -40,10 +40,10 @@ run_build_model $top_module
  Warning: Rule B9 (undriven module internal net) was violated 8 times.
  Warning: Rule B10 (unconnected module internal net) was violated 8 times.
  Warning: Rule N21 (unsupported UDP entry) was violated 2 times.
- End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
+ End build model: #primitives=5439, CPU_time=0.02 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
- End learning analyses, total learning CPU time=0.12 sec.
+ End learning analyses, total learning CPU time=0.10 sec.
  ------------------------------------------------------------------------------
 # ignoring warnings like N20 or B10
 # Set STIL file from DFT Compiler
@@ -58,7 +58,7 @@ run_drc
  Begin reading test protocol file ./gate/divider_dshift/divider_dshift.spf...
  Warning: Rule V14 (missing state) was violated 1 times.
  End parsing STIL file ./gate/divider_dshift/divider_dshift.spf with 0 errors.
- Test protocol file reading completed, CPU time=0.02 sec.
+ Test protocol file reading completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  Begin simulating test protocol procedures...
  Test protocol simulation completed, CPU time=0.00 sec.
@@ -100,9 +100,9 @@ puts $::env(TMGN)
 0.27
  
 set max_patterns $::env(patterns)
-200
+500
 set time_per_run $::env(time)
-0.25
+1
 set_atpg -patterns $max_patterns -time [list 0 $time_per_run]
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
@@ -111,42 +111,56 @@ run_atpg basic_scan_only -ndetects 1
  stored     detect/active  red/au/abort  coverage  CPU time
  ---------  -------------  ------------  --------  --------
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
- 31           1906  11570         0/4/0    48.90%      0.10
- 63            735  10823        0/16/0    59.68%      0.18
- 94            387  10420        0/32/1    64.97%      0.23
- 126           150  10237        0/65/1    67.89%      0.28
- Warning: ATPG terminated due to meeting maximum time limit. (M234)
+ 31           1906  11570         0/4/0    48.90%      0.09
+ 63            735  10823        0/16/0    59.68%      0.16
+ 94            387  10420        0/32/1    64.97%      0.21
+ 126           150  10237        0/65/1    67.89%      0.26
+ 158           163  10031       0/108/2    70.53%      0.31
+ 190           175   9803       0/161/3    72.74%      0.36
+ 222           115   9504       0/345/3    74.19%      0.42
+ 252           124   9266       0/459/4    75.52%      0.47
+ 279            39   9155       0/531/4    76.15%      0.53
+ 303            26   9061       0/599/5    76.53%      0.57
+ 327            45   8931       0/684/5    77.02%      0.61
+ 349            38   8793       0/784/5    77.39%      0.64
+ 373            79   8656       0/842/6    78.17%      0.69
+ 404            33   8516       0/949/7    78.55%      0.75
+ 434            64   8208     0/1193/10    79.07%      0.80
+ 466            27   8123     0/1251/12    79.48%      0.85
+ 497            62   7904     0/1408/15    79.85%      0.92
+ 500             2   7893     0/1417/15    79.88%      0.94
+ Warning: ATPG terminated due to meeting pattern count limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      10015
-   detected_by_simulation         DS       (590)
+ Detected                         DT      11784
+   detected_by_simulation         DS       (992)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (8153)
+   transition-partially_detected   TP      (9520)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU         65
-   atpg_untestable-not_detected   AN        (65)
- Not detected                     ND       4672
-   not-controlled                 NC        (55)
-   not-observed                   NO      (4617)
+ ATPG untestable                  AU       1417
+   atpg_untestable-not_detected   AN      (1417)
+ Not detected                     ND       1551
+   not-controlled                 NC         (3)
+   not-observed                   NO      (1548)
  -----------------------------------------------
  total faults                             14752
- test coverage                            67.89%
+ test coverage                            79.88%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                         126
-     #basic_scan patterns                   126
+ #internal patterns                         500
+     #basic_scan patterns                   500
  -----------------------------------------------
 # report_faults -slack effectiveness  
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 100394496.00
+ SDQL 47485784.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
- Patterns written reference 507 V statements, generating 15239 test cycles
- End writing file 'pattern_sdd_slack.stil' with 126 patterns, File_size = 182238, CPU_time = 0.0 sec.
+ Patterns written reference 2003 V statements, generating 60119 test cycles
+ End writing file 'pattern_sdd_slack.stil' with 500 patterns, File_size = 627299, CPU_time = 0.0 sec.
 exit

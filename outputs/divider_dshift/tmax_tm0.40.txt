@@ -25,7 +25,7 @@ read_netlist -delete
 read_netlist $scan_lib -library
  Begin reading netlist ( ./nangate_scan.v )...
  End parsing Verilog file ./nangate_scan.v with 0 errors.
- End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.00 sec, Memory=0MB
+ End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.01 sec, Memory=0MB
 # read in user's synthesized verilog code
 #read_netlist $synthesized_files
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
@@ -100,7 +100,7 @@ puts $::env(TMGN)
 0.20
  
 set max_patterns $::env(patterns)
-200
+500
 set time_per_run $::env(time)
 0.40
 set_atpg -patterns $max_patterns -time [list 0 $time_per_run]
@@ -113,43 +113,44 @@ run_atpg basic_scan_only -ndetects 1
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
  31           2124  11352         0/4/0    48.90%      0.07
  63            766  10574        0/16/0    59.02%      0.13
- 95            397  10162        0/31/0    63.72%      0.19
- 124           304   9830        0/59/0    68.10%      0.24
- 155           203   9595        0/91/1    71.03%      0.29
- 187           186   9359       0/141/2    73.01%      0.34
- 200            41   9305       0/154/3    73.75%      0.37
- Warning: ATPG terminated due to meeting pattern count limit. (M234)
+ 95            397  10162        0/31/0    63.72%      0.18
+ 124           304   9830        0/59/0    68.10%      0.25
+ 155           203   9595        0/91/1    71.03%      0.30
+ 187           186   9359       0/141/2    73.01%      0.35
+ 219           109   9194       0/197/3    74.64%      0.40
+ 228            20   9135       0/236/3    75.04%      0.43
+ Warning: ATPG terminated due to meeting maximum time limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      10880
-   detected_by_simulation         DS       (650)
+ Detected                         DT      11070
+   detected_by_simulation         DS       (658)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (8958)
+   transition-partially_detected   TP      (9140)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU        154
-   atpg_untestable-not_detected   AN       (154)
- Not detected                     ND       3718
-   not-controlled                 NC        (34)
-   not-observed                   NO      (3684)
+ ATPG untestable                  AU        236
+   atpg_untestable-not_detected   AN       (236)
+ Not detected                     ND       3446
+   not-controlled                 NC        (33)
+   not-observed                   NO      (3413)
  -----------------------------------------------
  total faults                             14752
- test coverage                            73.75%
+ test coverage                            75.04%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                         200
-     #basic_scan patterns                   200
+ #internal patterns                         228
+     #basic_scan patterns                   228
  -----------------------------------------------
 # report_faults -slack effectiveness  
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 86079592.00
+ SDQL 81522992.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
- Patterns written reference 803 V statements, generating 24119 test cycles
- End writing file 'pattern_sdd_slack.stil' with 200 patterns, File_size = 270298, CPU_time = 0.0 sec.
+ Patterns written reference 915 V statements, generating 27479 test cycles
+ End writing file 'pattern_sdd_slack.stil' with 228 patterns, File_size = 303618, CPU_time = 0.0 sec.
 exit
