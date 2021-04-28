@@ -64,7 +64,7 @@ Report : timing
 	-sort_by slack
 Design : divider_dshift
 Version: K-2015.06-SP3-2
-Date   : Tue Apr 27 23:24:59 2021
+Date   : Tue Apr 27 23:28:58 2021
 ****************************************
 
 
@@ -128,7 +128,7 @@ Information: Defining new variable 'top_module'. (CMD-041)
 
 Timing updates: 2 (1 implicit, 1 explicit) (1 incremental, 1 full, 0 logical)
 Noise updates: 0 (0 implicit, 0 explicit) (0 incremental, 0 full)
-Maximum memory usage for this session: 578.34 MB
+Maximum memory usage for this session: 578.35 MB
 CPU usage for this session: 2 seconds 
 Elapsed time for this session: 1 seconds
 Diagnostics summary: 7 informationals

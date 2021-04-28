@@ -25,7 +25,7 @@ read_netlist -delete
 read_netlist $scan_lib -library
  Begin reading netlist ( ./nangate_scan.v )...
  End parsing Verilog file ./nangate_scan.v with 0 errors.
- End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.00 sec, Memory=0MB
+ End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.01 sec, Memory=0MB
 # read in user's synthesized verilog code
 #read_netlist $synthesized_files
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
@@ -43,7 +43,7 @@ run_build_model $top_module
  End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
- End learning analyses, total learning CPU time=0.11 sec.
+ End learning analyses, total learning CPU time=0.10 sec.
  ------------------------------------------------------------------------------
 # ignoring warnings like N20 or B10
 # Set STIL file from DFT Compiler
@@ -79,7 +79,7 @@ run_drc
  ------------------------------------------------------------------------------
  Begin DRC dependent learning...
  Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec
- DRC dependent learning completed, CPU time=0.00 sec.
+ DRC dependent learning completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  DRC Summary Report
  ------------------------------------------------------------------------------
@@ -103,7 +103,7 @@ set max_patterns $::env(patterns)
 200
 set time_per_run $::env(time)
 0.25
-set_atpg -patterns $max_patterns -time "{0 ${time_per_run}}"
+set_atpg -patterns $max_patterns -time {0 0.2}
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
  ----------------------------------------------------------
@@ -111,45 +111,42 @@ run_atpg basic_scan_only -ndetects 1
  stored     detect/active  red/au/abort  coverage  CPU time
  ---------  -------------  ------------  --------  --------
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
- 31           1958  11518         0/4/0    48.90%      0.08
- 63            810  10696        0/16/0    59.86%      0.14
- 95            364  10317        0/31/2    64.95%      0.19
- 127           170  10114        0/64/3    67.92%      0.24
- 159           246   9826       0/106/4    71.13%      0.30
- 191           143   9634       0/155/6    73.24%      0.35
- 200            33   9593       0/163/6    73.75%      0.38
- Warning: ATPG terminated due to meeting pattern count limit. (M234)
+ 31           1958  11518         0/4/0    48.90%      0.06
+ 63            810  10696        0/16/0    59.86%      0.12
+ 95            364  10317        0/31/2    64.95%      0.18
+ 127           170  10114        0/64/3    67.92%      0.22
+ Warning: ATPG terminated due to meeting maximum time limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      10880
-   detected_by_simulation         DS       (636)
+ Detected                         DT      10019
+   detected_by_simulation         DS       (506)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (8972)
+   transition-partially_detected   TP      (8241)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU        163
-   atpg_untestable-not_detected   AN       (163)
- Not detected                     ND       3709
-   not-controlled                 NC        (37)
-   not-observed                   NO      (3672)
+ ATPG untestable                  AU         64
+   atpg_untestable-not_detected   AN        (64)
+ Not detected                     ND       4669
+   not-controlled                 NC        (68)
+   not-observed                   NO      (4601)
  -----------------------------------------------
  total faults                             14752
- test coverage                            73.75%
+ test coverage                            67.92%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                         200
-     #basic_scan patterns                   200
+ #internal patterns                         127
+     #basic_scan patterns                   127
  -----------------------------------------------
 # report_faults -slack effectiveness  
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 86185376.00
+ SDQL 101994208.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
- Patterns written reference 803 V statements, generating 24119 test cycles
- End writing file 'pattern_sdd_slack.stil' with 200 patterns, File_size = 270298, CPU_time = 0.0 sec.
+ Patterns written reference 511 V statements, generating 15359 test cycles
+ End writing file 'pattern_sdd_slack.stil' with 127 patterns, File_size = 183428, CPU_time = 0.0 sec.
 exit

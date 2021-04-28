@@ -103,7 +103,7 @@ set max_patterns $::env(patterns)
 200
 set time_per_run $::env(time)
 0.25
-set_atpg -patterns $max_patterns -time "{0 ${time_per_run}}"
+set_atpg -patterns $max_patterns -time {0 0.2}
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
  ----------------------------------------------------------
@@ -111,45 +111,41 @@ run_atpg basic_scan_only -ndetects 1
  stored     detect/active  red/au/abort  coverage  CPU time
  ---------  -------------  ------------  --------  --------
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
- 31           2016  11460         0/4/0    48.90%      0.08
- 62            706  10741        0/17/1    59.22%      0.14
- 94            434  10289        0/35/1    65.33%      0.19
- 126           178  10069        0/77/2    68.27%      0.25
- 158           219   9804       0/123/3    70.74%      0.30
- 190           228   9524       0/175/4    73.24%      0.35
- 200            39   9467       0/193/4    73.79%      0.37
- Warning: ATPG terminated due to meeting pattern count limit. (M234)
+ 31           2016  11460         0/4/0    48.90%      0.10
+ 62            706  10741        0/17/1    59.22%      0.17
+ 94            434  10289        0/35/1    65.33%      0.22
+ Warning: ATPG terminated due to meeting maximum time limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      10886
-   detected_by_simulation         DS       (647)
+ Detected                         DT       9638
+   detected_by_simulation         DS       (457)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (8967)
+   transition-partially_detected   TP      (7909)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU        193
-   atpg_untestable-not_detected   AN       (193)
- Not detected                     ND       3673
-   not-controlled                 NC        (47)
-   not-observed                   NO      (3626)
+ ATPG untestable                  AU         35
+   atpg_untestable-not_detected   AN        (35)
+ Not detected                     ND       5079
+   not-controlled                 NC        (71)
+   not-observed                   NO      (5008)
  -----------------------------------------------
  total faults                             14752
- test coverage                            73.79%
+ test coverage                            65.33%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                         200
-     #basic_scan patterns                   200
+ #internal patterns                          94
+     #basic_scan patterns                    94
  -----------------------------------------------
 # report_faults -slack effectiveness  
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 85055192.00
+ SDQL 107990064.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
- Patterns written reference 803 V statements, generating 24119 test cycles
- End writing file 'pattern_sdd_slack.stil' with 200 patterns, File_size = 270298, CPU_time = 0.0 sec.
+ Patterns written reference 379 V statements, generating 11399 test cycles
+ End writing file 'pattern_sdd_slack.stil' with 94 patterns, File_size = 144163, CPU_time = 0.0 sec.
 exit

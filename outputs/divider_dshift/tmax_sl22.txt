@@ -25,7 +25,7 @@ read_netlist -delete
 read_netlist $scan_lib -library
  Begin reading netlist ( ./nangate_scan.v )...
  End parsing Verilog file ./nangate_scan.v with 0 errors.
- End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.00 sec, Memory=0MB
+ End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.01 sec, Memory=0MB
 # read in user's synthesized verilog code
 #read_netlist $synthesized_files
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
@@ -78,7 +78,7 @@ run_drc
  Nonscan rules checking completed, CPU time=0.00 sec.
  ------------------------------------------------------------------------------
  Begin DRC dependent learning...
- Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.01 sec
  DRC dependent learning completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  DRC Summary Report
@@ -103,7 +103,7 @@ set max_patterns $::env(patterns)
 200
 set time_per_run $::env(time)
 0.25
-set_atpg -patterns $max_patterns -time "{0 ${time_per_run}}"
+set_atpg -patterns $max_patterns -time {0 0.2}
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
  ----------------------------------------------------------
@@ -115,41 +115,38 @@ run_atpg basic_scan_only -ndetects 1
  63            764  10657        0/18/1    59.44%      0.14
  94            372  10267        0/36/2    64.83%      0.19
  125           215  10016        0/72/2    67.70%      0.24
- 157           215   9759       0/114/4    70.84%      0.29
- 189           230   9487       0/156/5    73.14%      0.35
- 200            64   9417       0/162/5    73.90%      0.38
- Warning: ATPG terminated due to meeting pattern count limit. (M234)
+ Warning: ATPG terminated due to meeting maximum time limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      10902
-   detected_by_simulation         DS       (655)
+ Detected                         DT       9987
+   detected_by_simulation         DS       (529)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (8975)
+   transition-partially_detected   TP      (8186)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU        162
-   atpg_untestable-not_detected   AN       (162)
- Not detected                     ND       3688
-   not-controlled                 NC        (41)
-   not-observed                   NO      (3647)
+ ATPG untestable                  AU         72
+   atpg_untestable-not_detected   AN        (72)
+ Not detected                     ND       4693
+   not-controlled                 NC        (58)
+   not-observed                   NO      (4635)
  -----------------------------------------------
  total faults                             14752
- test coverage                            73.90%
+ test coverage                            67.70%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                         200
-     #basic_scan patterns                   200
+ #internal patterns                         125
+     #basic_scan patterns                   125
  -----------------------------------------------
 # report_faults -slack effectiveness  
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 85696912.00
+ SDQL 100887568.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
- Patterns written reference 803 V statements, generating 24119 test cycles
- End writing file 'pattern_sdd_slack.stil' with 200 patterns, File_size = 270298, CPU_time = 0.0 sec.
+ Patterns written reference 503 V statements, generating 15119 test cycles
+ End writing file 'pattern_sdd_slack.stil' with 125 patterns, File_size = 181048, CPU_time = 0.0 sec.
 exit
