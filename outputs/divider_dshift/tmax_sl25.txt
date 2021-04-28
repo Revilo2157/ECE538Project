@@ -31,7 +31,7 @@ read_netlist $scan_lib -library
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
  Begin reading netlist ( ./gate/divider_dshift/divider_dshift_scan.v )...
  End parsing Verilog file ./gate/divider_dshift/divider_dshift_scan.v with 0 errors.
- End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.02 sec, Memory=1MB
+ End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.01 sec, Memory=1MB
 run_build_model $top_module
  ------------------------------------------------------------------------------
  Begin build model for topcut = divider_dshift ...
@@ -43,7 +43,7 @@ run_build_model $top_module
  End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
- End learning analyses, total learning CPU time=0.12 sec.
+ End learning analyses, total learning CPU time=0.11 sec.
  ------------------------------------------------------------------------------
 # ignoring warnings like N20 or B10
 # Set STIL file from DFT Compiler
@@ -85,7 +85,7 @@ run_drc
  ------------------------------------------------------------------------------
  Warning: Rule V14 (missing state) was violated 1 times.
  There were 1 violations that occurred during DRC process.
- Design rules checking was successful, total CPU time=0.02 sec.
+ Design rules checking was successful, total CPU time=0.03 sec.
  ------------------------------------------------------------------------------
 read_timing ./SDD/slack.dat
  reading slack data file ./SDD/slack.dat.
@@ -100,9 +100,9 @@ puts $::env(TMGN)
 0.25
  
 set max_patterns $::env(patterns)
-500
+10000
 set time_per_run $::env(time)
-1
+5
 set_atpg -patterns $max_patterns -time [list 0 $time_per_run]
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
@@ -113,54 +113,58 @@ run_atpg basic_scan_only -ndetects 1
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
  31           1958  11518         0/4/0    48.90%      0.07
  63            810  10696        0/16/0    59.86%      0.13
- 95            364  10317        0/31/2    64.95%      0.20
- 127           170  10114        0/64/3    67.92%      0.24
- 159           246   9826       0/106/4    71.13%      0.30
- 191           143   9634       0/155/6    73.24%      0.35
- 223           112   9417       0/260/7    74.78%      0.41
- 251           125   9140       0/412/7    75.77%      0.47
- 274            49   9004       0/499/8    76.38%      0.51
- 301            64   8882       0/557/8    77.16%      0.56
- 323            39   8776       0/624/8    77.70%      0.60
+ 95            364  10317        0/31/2    64.95%      0.18
+ 127           170  10114        0/64/3    67.92%      0.23
+ 159           246   9826       0/106/4    71.13%      0.29
+ 191           143   9634       0/155/6    73.24%      0.34
+ 223           112   9417       0/260/7    74.78%      0.40
+ 251           125   9140       0/412/7    75.77%      0.46
+ 274            49   9004       0/499/8    76.38%      0.50
+ 301            64   8882       0/557/8    77.16%      0.55
+ 323            39   8776       0/624/8    77.70%      0.59
  348            38   8648       0/714/8    78.13%      0.64
- 371            44   8505       0/813/9    78.59%      0.69
+ 371            44   8505       0/813/9    78.59%      0.68
  401            56   8199     0/1063/10    79.07%      0.75
  432            61   8038     0/1163/12    79.48%      0.80
  464            36   7930     0/1235/15    79.98%      0.84
  496            43   7712     0/1410/17    80.35%      0.90
- 500             7   7697     0/1418/17    80.42%      0.92
- Warning: ATPG terminated due to meeting pattern count limit. (M234)
+ 526            29   7551     0/1542/17    80.66%      0.94
+ 551            36   7283     0/1774/17    81.01%      0.99
+ 571            52   7012     0/1993/17    81.34%      1.04
+ 602            25   6913     0/2067/17    81.61%      1.09
+ 630            50   6807     0/2123/18    81.89%      1.15
+ 660            24   6350     0/2556/19    82.12%      1.23
+ 662             1   6286     0/2619/19    82.13%      1.26
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      11864
-   detected_by_simulation         DS       (940)
+ Detected                         DT      12116
+   detected_by_simulation         DS      (1038)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (9652)
+   transition-partially_detected   TP      (9806)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU       1418
-   atpg_untestable-not_detected   AN      (1418)
- Not detected                     ND       1470
-   not-controlled                 NC         (7)
-   not-observed                   NO      (1463)
+ ATPG untestable                  AU       2619
+   atpg_untestable-not_detected   AN      (2619)
+ Not detected                     ND         17
+   not-observed                   NO        (17)
  -----------------------------------------------
  total faults                             14752
- test coverage                            80.42%
+ test coverage                            82.13%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                         500
-     #basic_scan patterns                   500
+ #internal patterns                         662
+     #basic_scan patterns                   662
  -----------------------------------------------
 # report_faults -slack effectiveness  
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 47099272.00
+ SDQL 21465024.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
- Patterns written reference 2003 V statements, generating 60119 test cycles
- End writing file 'pattern_sdd_slack.stil' with 500 patterns, File_size = 627299, CPU_time = 0.0 sec.
+ Patterns written reference 2651 V statements, generating 79559 test cycles
+ End writing file 'pattern_sdd_slack.stil' with 662 patterns, File_size = 820015, CPU_time = 0.0 sec.
 exit

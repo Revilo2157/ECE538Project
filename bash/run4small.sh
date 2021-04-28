@@ -14,8 +14,8 @@ rm -r $outDir > /dev/null
 mkdir $outDir
 
 echo Starting Slack
-export patterns=500
-export time=1
+export patterns=10000
+export time=5
 
 echo Patterns: $patterns Time: $time > ${outDir}/slacks.txt
 for c in {5..30..1}
@@ -46,7 +46,7 @@ pt_shell -f ./tcl/PT_scriptsd.tcl > "${outDir}/pt_sl${SLACK}.txt"
 
 echo Slack: $c Time: $time > ${outDir}/patterns.txt
 
-for patterns in {100..500..25}
+for patterns in {500..20000..500}
 do
 	echo
 	echo Doing $patterns patterns
@@ -59,9 +59,9 @@ done
 
 echo
 echo Starting Time
-export patterns=500
+export patterns=10000
 echo Slack: $c Patterns: $patterns > ${outDir}/time.txt
-for time in $(seq 0.05 0.05 1)
+for time in $(seq 0.5 0.5 10)
 do
 	echo
 	echo Doing $time seconds

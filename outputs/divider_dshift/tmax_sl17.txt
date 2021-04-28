@@ -25,13 +25,13 @@ read_netlist -delete
 read_netlist $scan_lib -library
  Begin reading netlist ( ./nangate_scan.v )...
  End parsing Verilog file ./nangate_scan.v with 0 errors.
- End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.00 sec, Memory=0MB
+ End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.01 sec, Memory=0MB
 # read in user's synthesized verilog code
 #read_netlist $synthesized_files
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
  Begin reading netlist ( ./gate/divider_dshift/divider_dshift_scan.v )...
  End parsing Verilog file ./gate/divider_dshift/divider_dshift_scan.v with 0 errors.
- End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.02 sec, Memory=1MB
+ End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.01 sec, Memory=1MB
 run_build_model $top_module
  ------------------------------------------------------------------------------
  Begin build model for topcut = divider_dshift ...
@@ -40,7 +40,7 @@ run_build_model $top_module
  Warning: Rule B9 (undriven module internal net) was violated 8 times.
  Warning: Rule B10 (unconnected module internal net) was violated 8 times.
  Warning: Rule N21 (unsupported UDP entry) was violated 2 times.
- End build model: #primitives=5439, CPU_time=0.02 sec, Memory=2MB
+ End build model: #primitives=5439, CPU_time=0.03 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
  End learning analyses, total learning CPU time=0.11 sec.
@@ -61,7 +61,7 @@ run_drc
  Test protocol file reading completed, CPU time=0.00 sec.
  ------------------------------------------------------------------------------
  Begin simulating test protocol procedures...
- Test protocol simulation completed, CPU time=0.00 sec.
+ Test protocol simulation completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  Begin scan chain operation checking...
  Chain 1 successfully traced with 117 scan_cells.
@@ -100,9 +100,9 @@ puts $::env(TMGN)
 0.17
  
 set max_patterns $::env(patterns)
-500
+10000
 set time_per_run $::env(time)
-1
+5
 set_atpg -patterns $max_patterns -time [list 0 $time_per_run]
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
@@ -111,56 +111,58 @@ run_atpg basic_scan_only -ndetects 1
  stored     detect/active  red/au/abort  coverage  CPU time
  ---------  -------------  ------------  --------  --------
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
- 31           2257  11219         0/4/0    48.90%      0.08
- 62            781  10424        0/18/0    58.95%      0.13
- 94            483   9925        0/34/0    64.72%      0.19
- 126           341   9554        0/64/0    68.99%      0.23
- 158           250   9253       0/115/2    71.66%      0.29
- 190           250   8967       0/151/2    73.94%      0.33
- 222           114   8680       0/324/2    75.24%      0.39
- 252           108   8452       0/444/4    76.30%      0.44
- 275            53   8327       0/516/5    76.90%      0.48
- 297            39   8221       0/583/5    77.47%      0.54
- 321            49   8124       0/631/5    78.12%      0.57
- 344            38   7980       0/737/6    78.58%      0.62
- 363            49   7828       0/840/7    79.11%      0.66
- 395            53   7591      0/1024/7    79.54%      0.70
- 426            41   7400     0/1174/10    79.96%      0.76
- 457            27   7304     0/1243/13    80.44%      0.80
- 488            31   7055     0/1461/17    80.81%      0.86
- 499            42   6963     0/1511/17    80.96%      0.89
- 500             5   6949     0/1520/17    80.99%      0.89
- Warning: ATPG terminated due to meeting pattern count limit. (M234)
+ 31           2257  11219         0/4/0    48.90%      0.09
+ 62            781  10424        0/18/0    58.95%      0.15
+ 94            483   9925        0/34/0    64.72%      0.20
+ 126           341   9554        0/64/0    68.99%      0.25
+ 158           250   9253       0/115/2    71.66%      0.31
+ 190           250   8967       0/151/2    73.94%      0.35
+ 222           114   8680       0/324/2    75.24%      0.42
+ 252           108   8452       0/444/4    76.30%      0.46
+ 275            53   8327       0/516/5    76.90%      0.51
+ 297            39   8221       0/583/5    77.47%      0.55
+ 321            49   8124       0/631/5    78.12%      0.59
+ 344            38   7980       0/737/6    78.58%      0.63
+ 363            49   7828       0/840/7    79.11%      0.68
+ 395            53   7591      0/1024/7    79.54%      0.73
+ 426            41   7400     0/1174/10    79.96%      0.78
+ 457            27   7304     0/1243/13    80.44%      0.82
+ 488            31   7055     0/1461/17    80.81%      0.88
+ 518            64   6789     0/1663/17    81.18%      0.93
+ 542            31   6450     0/1971/17    81.49%      0.98
+ 572             9   6365     0/2047/17    81.75%      1.03
+ 598            30   6215     0/2167/18    82.00%      1.09
+ 618             9   5754     0/2619/20    82.13%      1.19
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      11948
-   detected_by_simulation         DS       (813)
+ Detected                         DT      12116
+   detected_by_simulation         DS       (823)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (9863)
+   transition-partially_detected   TP     (10021)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU       1520
-   atpg_untestable-not_detected   AN      (1520)
- Not detected                     ND       1284
-   not-observed                   NO      (1284)
+ ATPG untestable                  AU       2619
+   atpg_untestable-not_detected   AN      (2619)
+ Not detected                     ND         17
+   not-observed                   NO        (17)
  -----------------------------------------------
  total faults                             14752
- test coverage                            80.99%
+ test coverage                            82.13%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                         500
-     #basic_scan patterns                   500
+ #internal patterns                         618
+     #basic_scan patterns                   618
  -----------------------------------------------
 # report_faults -slack effectiveness  
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 44989472.00
+ SDQL 22720356.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
- Patterns written reference 2003 V statements, generating 60119 test cycles
- End writing file 'pattern_sdd_slack.stil' with 500 patterns, File_size = 627235, CPU_time = 0.0 sec.
+ Patterns written reference 2475 V statements, generating 74279 test cycles
+ End writing file 'pattern_sdd_slack.stil' with 618 patterns, File_size = 767655, CPU_time = 0.0 sec.
 exit

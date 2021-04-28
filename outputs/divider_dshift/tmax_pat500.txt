@@ -25,7 +25,7 @@ read_netlist -delete
 read_netlist $scan_lib -library
  Begin reading netlist ( ./nangate_scan.v )...
  End parsing Verilog file ./nangate_scan.v with 0 errors.
- End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.00 sec, Memory=0MB
+ End reading netlist: #modules=139, top=XOR2_X2, #lines=2594, CPU_time=0.01 sec, Memory=0MB
 # read in user's synthesized verilog code
 #read_netlist $synthesized_files
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
@@ -43,7 +43,7 @@ run_build_model $top_module
  End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
- End learning analyses, total learning CPU time=0.12 sec.
+ End learning analyses, total learning CPU time=0.13 sec.
  ------------------------------------------------------------------------------
 # ignoring warnings like N20 or B10
 # Set STIL file from DFT Compiler
@@ -58,7 +58,7 @@ run_drc
  Begin reading test protocol file ./gate/divider_dshift/divider_dshift.spf...
  Warning: Rule V14 (missing state) was violated 1 times.
  End parsing STIL file ./gate/divider_dshift/divider_dshift.spf with 0 errors.
- Test protocol file reading completed, CPU time=0.01 sec.
+ Test protocol file reading completed, CPU time=0.00 sec.
  ------------------------------------------------------------------------------
  Begin simulating test protocol procedures...
  Test protocol simulation completed, CPU time=0.00 sec.
@@ -67,7 +67,7 @@ run_drc
  Chain 1 successfully traced with 117 scan_cells.
  Chain 2 successfully traced with 117 scan_cells.
  Chain 3 successfully traced with 117 scan_cells.
- Scan chain operation checking completed, CPU time=0.00 sec.
+ Scan chain operation checking completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  Begin clock rules checking...
  Clock rules checking completed, CPU time=0.00 sec.
@@ -102,7 +102,7 @@ puts $::env(TMGN)
 set max_patterns $::env(patterns)
 500
 set time_per_run $::env(time)
-1
+5
 set_atpg -patterns $max_patterns -time [list 0 $time_per_run]
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
@@ -111,24 +111,24 @@ run_atpg basic_scan_only -ndetects 1
  stored     detect/active  red/au/abort  coverage  CPU time
  ---------  -------------  ------------  --------  --------
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
- 31           2124  11352         0/4/0    48.90%      0.10
- 63            766  10574        0/16/0    59.02%      0.16
- 95            397  10162        0/31/0    63.72%      0.21
- 124           304   9830        0/59/0    68.10%      0.27
- 155           203   9595        0/91/1    71.03%      0.32
- 187           186   9359       0/141/2    73.01%      0.38
- 219           109   9194       0/197/3    74.64%      0.43
- 247           103   8835       0/453/3    75.52%      0.48
- 277            87   8684       0/517/3    76.28%      0.53
- 302            57   8571       0/573/3    76.85%      0.57
- 326            42   8456       0/646/3    77.33%      0.61
- 350            53   8342       0/707/3    77.80%      0.66
- 368            45   8220       0/784/4    78.19%      0.71
- 390            52   8110       0/842/5    78.65%      0.75
- 419            40   7957       0/955/7    79.08%      0.79
- 449            45   7705     0/1162/11    79.64%      0.84
- 480            28   7605     0/1234/12    80.01%      0.89
- 500            38   7534     0/1267/13    80.31%      0.94
+ 31           2124  11352         0/4/0    48.90%      0.08
+ 63            766  10574        0/16/0    59.02%      0.14
+ 95            397  10162        0/31/0    63.72%      0.19
+ 124           304   9830        0/59/0    68.10%      0.24
+ 155           203   9595        0/91/1    71.03%      0.29
+ 187           186   9359       0/141/2    73.01%      0.35
+ 219           109   9194       0/197/3    74.64%      0.40
+ 247           103   8835       0/453/3    75.52%      0.46
+ 277            87   8684       0/517/3    76.28%      0.51
+ 302            57   8571       0/573/3    76.85%      0.55
+ 326            42   8456       0/646/3    77.33%      0.59
+ 350            53   8342       0/707/3    77.80%      0.64
+ 368            45   8220       0/784/4    78.19%      0.68
+ 390            52   8110       0/842/5    78.65%      0.72
+ 419            40   7957       0/955/7    79.08%      0.76
+ 449            45   7705     0/1162/11    79.64%      0.81
+ 480            28   7605     0/1234/12    80.01%      0.87
+ 500            38   7534     0/1267/13    80.31%      0.91
  Warning: ATPG terminated due to meeting pattern count limit. (M234)
  
     Collapsed Transition Fault Summary Report
