@@ -40,7 +40,7 @@ run_build_model $top_module
  Warning: Rule B9 (undriven module internal net) was violated 8 times.
  Warning: Rule B10 (unconnected module internal net) was violated 8 times.
  Warning: Rule N21 (unsupported UDP entry) was violated 2 times.
- End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
+ End build model: #primitives=5439, CPU_time=0.02 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
  End learning analyses, total learning CPU time=0.11 sec.
@@ -79,13 +79,13 @@ run_drc
  ------------------------------------------------------------------------------
  Begin DRC dependent learning...
  Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec
- DRC dependent learning completed, CPU time=0.02 sec.
+ DRC dependent learning completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  DRC Summary Report
  ------------------------------------------------------------------------------
  Warning: Rule V14 (missing state) was violated 1 times.
  There were 1 violations that occurred during DRC process.
- Design rules checking was successful, total CPU time=0.03 sec.
+ Design rules checking was successful, total CPU time=0.02 sec.
  ------------------------------------------------------------------------------
 read_timing ./SDD/slack.dat
  reading slack data file ./SDD/slack.dat.
@@ -103,7 +103,7 @@ set max_patterns $::env(patterns)
 200
 set time_per_run $::env(time)
 0.25
-set_atpg -patterns $max_patterns -time {0 0.2}
+set_atpg -patterns $max_patterns -time [list 0 $time_per_run]
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
  ----------------------------------------------------------
@@ -111,41 +111,43 @@ run_atpg basic_scan_only -ndetects 1
  stored     detect/active  red/au/abort  coverage  CPU time
  ---------  -------------  ------------  --------  --------
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
- 31           2543  10933         0/4/0    49.24%      0.09
- 63            842  10082        0/13/0    60.01%      0.16
- 92            467   9597        0/31/0    64.74%      0.21
+ 31           2543  10933         0/4/0    49.24%      0.07
+ 63            842  10082        0/13/0    60.01%      0.14
+ 92            467   9597        0/31/0    64.74%      0.19
+ 122           288   9279        0/61/1    67.65%      0.24
+ 153           193   9050        0/97/2    69.90%      0.29
  Warning: ATPG terminated due to meeting maximum time limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT       9551
-   detected_by_simulation         DS       (337)
+ Detected                         DT      10312
+   detected_by_simulation         DS       (381)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (7942)
+   transition-partially_detected   TP      (8659)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU         31
-   atpg_untestable-not_detected   AN        (31)
- Not detected                     ND       5170
-   not-controlled                 NC        (86)
-   not-observed                   NO      (5084)
+ ATPG untestable                  AU         97
+   atpg_untestable-not_detected   AN        (97)
+ Not detected                     ND       4343
+   not-controlled                 NC        (61)
+   not-observed                   NO      (4282)
  -----------------------------------------------
  total faults                             14752
- test coverage                            64.74%
+ test coverage                            69.90%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                          92
-     #basic_scan patterns                    92
+ #internal patterns                         153
+     #basic_scan patterns                   153
  -----------------------------------------------
 # report_faults -slack effectiveness  
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 108502640.00
+ SDQL 96432744.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
- Patterns written reference 371 V statements, generating 11159 test cycles
- End writing file 'pattern_sdd_slack.stil' with 92 patterns, File_size = 141785, CPU_time = 0.0 sec.
+ Patterns written reference 615 V statements, generating 18479 test cycles
+ End writing file 'pattern_sdd_slack.stil' with 153 patterns, File_size = 214368, CPU_time = 0.0 sec.
 exit

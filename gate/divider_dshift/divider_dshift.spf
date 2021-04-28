@@ -3,7 +3,7 @@ STIL 1.0 {
 }
 Header {
     Title "Minimal STIL for design `divider_dshift'";
-    Date "Tue Apr 27 23:27:42 2021";
+    Date "Tue Apr 27 23:49:48 2021";
     Source "DFT Compiler F-2011.09";
 }
 Signals {
