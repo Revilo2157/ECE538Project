@@ -31,7 +31,7 @@ read_netlist $scan_lib -library
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
  Begin reading netlist ( ./gate/divider_dshift/divider_dshift_scan.v )...
  End parsing Verilog file ./gate/divider_dshift/divider_dshift_scan.v with 0 errors.
- End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.03 sec, Memory=1MB
+ End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.01 sec, Memory=1MB
 run_build_model $top_module
  ------------------------------------------------------------------------------
  Begin build model for topcut = divider_dshift ...
@@ -43,7 +43,7 @@ run_build_model $top_module
  End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
- End learning analyses, total learning CPU time=0.13 sec.
+ End learning analyses, total learning CPU time=0.11 sec.
  ------------------------------------------------------------------------------
 # ignoring warnings like N20 or B10
 # Set STIL file from DFT Compiler
@@ -58,7 +58,7 @@ run_drc
  Begin reading test protocol file ./gate/divider_dshift/divider_dshift.spf...
  Warning: Rule V14 (missing state) was violated 1 times.
  End parsing STIL file ./gate/divider_dshift/divider_dshift.spf with 0 errors.
- Test protocol file reading completed, CPU time=0.00 sec.
+ Test protocol file reading completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  Begin simulating test protocol procedures...
  Test protocol simulation completed, CPU time=0.00 sec.
@@ -78,7 +78,7 @@ run_drc
  Nonscan rules checking completed, CPU time=0.00 sec.
  ------------------------------------------------------------------------------
  Begin DRC dependent learning...
- Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec
+ Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.01 sec
  DRC dependent learning completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  DRC Summary Report
@@ -113,31 +113,31 @@ run_atpg basic_scan_only -ndetects 1
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
  31           2124  11352         0/4/0    48.90%      0.09
  63            766  10574        0/16/0    59.02%      0.16
- 95            397  10162        0/31/0    63.72%      0.21
- 124           304   9830        0/59/0    68.10%      0.26
- 155           203   9595        0/91/1    71.03%      0.32
- 187           186   9359       0/141/2    73.01%      0.37
- 200            41   9305       0/154/3    73.75%      0.40
+ 95            403  10156        0/31/1    63.90%      0.21
+ 125           336   9804        0/47/1    68.86%      0.27
+ 157           178   9591        0/82/4    71.34%      0.32
+ 189           179   9358       0/136/5    73.37%      0.37
+ 200            36   9305       0/153/6    73.86%      0.40
  Warning: ATPG terminated due to meeting pattern count limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      10880
-   detected_by_simulation         DS       (650)
+ Detected                         DT      10896
+   detected_by_simulation         DS       (664)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (8958)
+   transition-partially_detected   TP      (8960)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU        154
-   atpg_untestable-not_detected   AN       (154)
- Not detected                     ND       3718
+ ATPG untestable                  AU        153
+   atpg_untestable-not_detected   AN       (153)
+ Not detected                     ND       3703
    not-controlled                 NC        (34)
-   not-observed                   NO      (3684)
+   not-observed                   NO      (3669)
  -----------------------------------------------
  total faults                             14752
- test coverage                            73.75%
+ test coverage                            73.86%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
@@ -148,7 +148,7 @@ run_atpg basic_scan_only -ndetects 1
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 86079592.00
+ SDQL 85726704.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
  Patterns written reference 803 V statements, generating 24119 test cycles
  End writing file 'pattern_sdd_slack.stil' with 200 patterns, File_size = 270298, CPU_time = 0.0 sec.

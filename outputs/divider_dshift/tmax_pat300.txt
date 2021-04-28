@@ -31,7 +31,7 @@ read_netlist $scan_lib -library
 read_netlist  ./gate/${top_module}/${top_module}_scan.v
  Begin reading netlist ( ./gate/divider_dshift/divider_dshift_scan.v )...
  End parsing Verilog file ./gate/divider_dshift/divider_dshift_scan.v with 0 errors.
- End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.02 sec, Memory=1MB
+ End reading netlist: #modules=1, top=divider_dshift, #lines=3201, CPU_time=0.01 sec, Memory=1MB
 run_build_model $top_module
  ------------------------------------------------------------------------------
  Begin build model for topcut = divider_dshift ...
@@ -43,7 +43,7 @@ run_build_model $top_module
  End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
- End learning analyses, total learning CPU time=0.13 sec.
+ End learning analyses, total learning CPU time=0.11 sec.
  ------------------------------------------------------------------------------
 # ignoring warnings like N20 or B10
 # Set STIL file from DFT Compiler
@@ -102,7 +102,7 @@ puts $::env(TMGN)
 set max_patterns $::env(patterns)
 300
 set time_per_run $::env(time)
-5
+0.25
 set_atpg -patterns $max_patterns -time "{0.01 ${time_per_run}}"
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
@@ -111,36 +111,37 @@ run_atpg basic_scan_only -ndetects 1
  stored     detect/active  red/au/abort  coverage  CPU time
  ---------  -------------  ------------  --------  --------
  Begin deterministic ATPG: #collapsed_faults=13480, abort_limit=10...
- 31           2167  11309         0/4/0    49.30%      0.11
- 60            450  10839        0/24/0    56.39%      0.17
- 92            592  10230        0/41/2    63.55%      0.22
- 124           262   9941        0/68/2    67.18%      0.28
- 156           210   9699       0/100/4    69.56%      0.34
- 188           212   9434       0/153/4    71.88%      0.38
- 220           159   9224       0/204/5    74.00%      0.44
- 252           134   8839       0/455/5    75.29%      0.49
- 280            90   8682       0/522/5    76.23%      0.55
- 300            38   8598       0/568/6    76.84%      0.59
+ 31           2168  11308         0/4/0    49.08%      0.09
+ 63            710  10585        0/17/0    59.91%      0.17
+ 95            517  10054        0/31/1    65.68%      0.22
+ 127           269   9757        0/59/1    69.72%      0.28
+ 159           138   9576       0/102/5    71.66%      0.33
+ 191           157   9349       0/172/5    73.74%      0.38
+ 220           147   8946       0/428/7    74.89%      0.43
+ 247            64   8830       0/480/8    75.66%      0.49
+ 277            86   8685       0/539/8    76.27%      0.54
+ 296            49   8598       0/577/8    76.94%      0.58
+ 300            11   8580       0/584/8    77.07%      0.59
  Warning: ATPG terminated due to meeting pattern count limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      11335
-   detected_by_simulation         DS       (750)
+ Detected                         DT      11370
+   detected_by_simulation         DS       (710)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP      (9313)
+   transition-partially_detected   TP      (9388)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU        568
-   atpg_untestable-not_detected   AN       (568)
- Not detected                     ND       2849
-   not-controlled                 NC        (18)
-   not-observed                   NO      (2831)
+ ATPG untestable                  AU        584
+   atpg_untestable-not_detected   AN       (584)
+ Not detected                     ND       2798
+   not-controlled                 NC        (19)
+   not-observed                   NO      (2779)
  -----------------------------------------------
  total faults                             14752
- test coverage                            76.84%
+ test coverage                            77.07%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
@@ -151,7 +152,7 @@ run_atpg basic_scan_only -ndetects 1
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 71374832.00
+ SDQL 71580936.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
  Patterns written reference 1203 V statements, generating 36119 test cycles
  End writing file 'pattern_sdd_slack.stil' with 300 patterns, File_size = 389299, CPU_time = 0.0 sec.
