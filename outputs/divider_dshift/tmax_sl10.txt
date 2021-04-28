@@ -43,7 +43,7 @@ run_build_model $top_module
  End build model: #primitives=5439, CPU_time=0.01 sec, Memory=2MB
  ------------------------------------------------------------------------------
  Begin learning analyses...
- End learning analyses, total learning CPU time=0.10 sec.
+ End learning analyses, total learning CPU time=0.11 sec.
  ------------------------------------------------------------------------------
 # ignoring warnings like N20 or B10
 # Set STIL file from DFT Compiler
@@ -70,7 +70,7 @@ run_drc
  Scan chain operation checking completed, CPU time=0.00 sec.
  ------------------------------------------------------------------------------
  Begin clock rules checking...
- Clock rules checking completed, CPU time=0.01 sec.
+ Clock rules checking completed, CPU time=0.00 sec.
  Clock grouping results: #pairs=0, #groups=0, #serial_pairs=0, #disturbed_pairs=0, CPU time=0.00 sec.
  ------------------------------------------------------------------------------
  Begin nonscan rules checking...
@@ -79,7 +79,7 @@ run_drc
  ------------------------------------------------------------------------------
  Begin DRC dependent learning...
  Fast-sequential depth results: control=0(0), observe=0(0), detect=0(0), CPU time=0.00 sec
- DRC dependent learning completed, CPU time=0.00 sec.
+ DRC dependent learning completed, CPU time=0.01 sec.
  ------------------------------------------------------------------------------
  DRC Summary Report
  ------------------------------------------------------------------------------
@@ -100,9 +100,9 @@ puts $::env(TMGN)
 0.10
  
 set max_patterns $::env(patterns)
-10000
+300
 set time_per_run $::env(time)
-5
+1.5
 set_atpg -patterns $max_patterns -time [list 0 $time_per_run]
 run_atpg basic_scan_only -ndetects 1
  ATPG performed for transition fault model using internal pattern source.
@@ -114,56 +114,46 @@ run_atpg basic_scan_only -ndetects 1
  31           2651  10825         0/4/0    49.24%      0.07
  61            814   9994        0/21/0    58.61%      0.12
  92            566   9413        0/36/0    64.91%      0.17
- 124           279   9103        0/67/0    68.38%      0.22
+ 124           279   9103        0/67/0    68.38%      0.23
  156           280   8780       0/110/1    71.18%      0.28
  188           274   8456       0/160/1    73.66%      0.32
- 220           131   8107       0/378/1    74.93%      0.37
- 246            79   7923       0/483/2    75.70%      0.44
- 274            46   7825       0/535/2    76.31%      0.48
- 299            67   7677       0/616/2    77.05%      0.51
- 325            62   7543       0/688/2    77.64%      0.55
- 349            28   7436       0/767/3    77.96%      0.59
- 370            62   7288       0/853/6    78.46%      0.63
- 402            77   7147       0/917/6    79.07%      0.68
- 428            70   6828      0/1166/9    79.69%      0.73
- 460            31   6700     0/1263/12    80.12%      0.78
- 489            42   6473     0/1448/16    80.44%      0.84
- 519            40   6283     0/1598/16    80.81%      0.88
- 540            33   5937     0/1911/16    81.16%      0.92
- 569            18   5790     0/2040/16    81.42%      0.97
- 600            39   5705     0/2086/17    81.83%      1.03
- 630            33   5579     0/2179/17    82.06%      1.07
- 641            10   5129     0/2619/18    82.13%      1.15
+ 220           131   8107       0/378/1    74.93%      0.38
+ 246            79   7923       0/483/2    75.70%      0.43
+ 274            46   7825       0/535/2    76.31%      0.47
+ 297            66   7691       0/603/2    77.04%      0.50
+ 300            26   7662       0/606/2    77.23%      0.52
+ Warning: ATPG terminated due to meeting pattern count limit. (M234)
  
     Collapsed Transition Fault Summary Report
  -----------------------------------------------
  fault class                     code   #faults
  ------------------------------  ----  ---------
- Detected                         DT      12116
-   detected_by_simulation         DS       (603)
+ Detected                         DT      11393
+   detected_by_simulation         DS       (506)
    detected_by_implication        DI      (1272)
-   transition-partially_detected   TP     (10241)
+   transition-partially_detected   TP      (9615)
  Possibly detected                PT          0
  Undetectable                     UD          0
- ATPG untestable                  AU       2619
-   atpg_untestable-not_detected   AN      (2619)
- Not detected                     ND         17
-   not-observed                   NO        (17)
+ ATPG untestable                  AU        606
+   atpg_untestable-not_detected   AN       (606)
+ Not detected                     ND       2753
+   not-controlled                 NC        (10)
+   not-observed                   NO      (2743)
  -----------------------------------------------
  total faults                             14752
- test coverage                            82.13%
+ test coverage                            77.23%
  -----------------------------------------------
             Pattern Summary Report
  -----------------------------------------------
- #internal patterns                         641
-     #basic_scan patterns                   641
+ #internal patterns                         300
+     #basic_scan patterns                   300
  -----------------------------------------------
 # report_faults -slack effectiveness  
 #report_faults -slack tdet 
 #report_faults -slack delta
 report_faults -slack sdql
- SDQL 25113106.00
+ SDQL 72199704.00
 write_patterns ./SDD/pattern_sdd_slack.stil -internal -format STIL -unified_stil_flow -replace 
- Patterns written reference 2567 V statements, generating 77039 test cycles
- End writing file 'pattern_sdd_slack.stil' with 641 patterns, File_size = 795025, CPU_time = 0.0 sec.
+ Patterns written reference 1203 V statements, generating 36119 test cycles
+ End writing file 'pattern_sdd_slack.stil' with 300 patterns, File_size = 389299, CPU_time = 0.0 sec.
 exit

@@ -29,7 +29,7 @@ NangateOpenCellLibrary.db
 set link_library   "* NangateOpenCellLibrary.db"
 * NangateOpenCellLibrary.db
 set timestamp [clock format [clock scan now] -format "%Y-%m-%d_%H-%M"]
-2021-04-28_00-07
+2021-04-28_00-21
 set enable_page_mode false
 false
 set sh_new_variable_message false
@@ -672,8 +672,8 @@ Information: The register 'shifted_reg[4]' is a constant and will be removed. (O
     0:00:05    4662.7      0.00       0.0    1342.9                          
     0:00:05    4662.7      0.00       0.0    1342.9                          
     0:00:05    4673.1      0.00       0.0     885.2                          
-    0:00:06    4676.8      0.00       0.0     710.1                          
-    0:00:06    4689.3      0.00       0.0     646.3                          
+    0:00:05    4676.8      0.00       0.0     710.1                          
+    0:00:05    4689.3      0.00       0.0     646.3                          
     0:00:06    4689.8      0.00       0.0     639.4                          
     0:00:06    4689.8      0.00       0.0     639.4                          
     0:00:06    4689.8      0.00       0.0     639.4                          
@@ -760,7 +760,7 @@ check_design
 ****************************************
 check_design summary:
 Version:     F-2011.09
-Date:        Wed Apr 28 00:07:57 2021
+Date:        Wed Apr 28 00:21:40 2021
 ****************************************
 
                    Name                                            Total
@@ -944,7 +944,7 @@ Information: The register 'shifted_1_reg[4]' is a constant and will be removed. 
     0:00:05    4736.7      0.00       0.0       0.0                               -4.65
     0:00:06    4759.5      0.00       0.0       0.0 reg_a_reg[21]/D               -3.78
     0:00:06    4786.4      0.00       0.0       0.0 sdata_reg[2]/D                -2.20
-    0:00:07    4813.5      0.00       0.0       0.0 sdata_reg[14]/D               -0.73
+    0:00:06    4813.5      0.00       0.0       0.0 sdata_reg[14]/D               -0.73
     0:00:07    4835.1      0.00       0.0       0.0 reg_a_reg[16]/D               -0.05
     0:00:07    4839.1      0.00       0.0       0.0                                0.00
 
@@ -959,7 +959,7 @@ Information: The register 'shifted_1_reg[4]' is a constant and will be removed. 
     0:00:07    4839.1      0.00       0.0       0.0                                0.00
     0:00:07    4826.0      0.00       0.0       0.0                                0.00
     0:00:07    4819.9      0.01       0.0       0.0                                0.00
-    0:00:08    4815.7      0.01       0.0       0.0                                0.00
+    0:00:07    4815.7      0.01       0.0       0.0                                0.00
     0:00:08    4811.9      0.01       0.0       0.0                                0.00
     0:00:08    4810.6      0.01       0.0       0.0                                0.00
     0:00:08    4810.6      0.01       0.0       0.0                                0.00
