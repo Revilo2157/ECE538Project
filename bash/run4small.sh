@@ -18,7 +18,7 @@ export patterns=200
 export time=0.25
 
 echo Patterns: $patterns Time: $time > ${outDir}/slacks.txt
-for c in {10..30..5}
+for c in {5..30..1}
 do
 	echo
 	echo Doing slack of $c%
